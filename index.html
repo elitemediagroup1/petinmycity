@@ -1,119 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PetsInMyCity &mdash; Find Pet Insurance, Vets, Adoption and More Near You</title>
-<meta name="description" content="Free pet insurance quotes, local vet finder, adoption resources, and pet services in your city. PetsInMyCity connects pet owners with trusted local providers." />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://petsinmycity.com/" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" media="print" onload="this.media=&#39;all&#39;" />
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&display=swap" /></noscript>
-<link rel="stylesheet" href="/assets/style.css" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PetsInMyCity","url":"https://petsinmycity.com","description":"Free pet resource platform connecting pet owners with insurance, vets, adoption and local pet services.","contactPoint":{"@type":"ContactPoint","email":"help@elitemediagroup.io","contactType":"Customer Support"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is petsinmycity.com free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes  -  completely free for pet owners. We connect you with pet insurance providers, local vets, adoption resources, and pet services at no cost. We earn referral fees from our partners when you choose to use their services."}},{"@type":"Question","name":"How do I find pet services in my city?","acceptedAnswer":{"@type":"Answer","text":"Enter your city or ZIP code in the search bar above and select the service you need. We'll show you local options for insurance, vets, adoption, grooming, boarding, and training near you."}},{"@type":"Question","name":"What is the best pet insurance for my dog?","acceptedAnswer":{"@type":"Answer","text":"The best pet insurance depends on your pet's age, breed, and your budget. We recommend using PetInsurer.com to compare plans from multiple providers side by side  -  it takes about 60 seconds and shows you the best options for your specific pet."}},{"@type":"Question","name":"How do I find a vet near me?","acceptedAnswer":{"@type":"Answer","text":"Use the Vet Finder section on your city page. Enter your city or ZIP code, select Find a Vet, and we'll connect you with licensed local veterinary practices in your area."}},{"@type":"Question","name":"Is petsinmycity.com affiliated with any specific pet insurance company?","acceptedAnswer":{"@type":"Answer","text":"We partner with multiple pet insurance providers including PetInsurer, Trupanion, Fetch, and others. We present all options fairly so you can choose the plan that best fits your pet and budget. Our goal is to help you find the right coverage, not to push one specific provider."}}]}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PetsInMyCity &mdash; Pet Insurance, Vets, Adoption &amp; More Near You</title>
+<meta name="description" content="Free pet insurance quotes, local vet finder, adoption resources, and pet services in your city. Free to use, no spam, local results only.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://petsinmycity.com/">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/script.js" defer></script>
 </head>
 <body>
 <div id="site-header"></div>
 
-<section class="pet-hero">
+<section class="pimc-hero">
   <div class="container">
-    <span class="lede-kicker">FREE PET RESOURCES</span>
-    <h1>Find Everything Your Pet Needs in Your City</h1>
-    <p class="lede">Pet insurance quotes, local vets, adoption resources, grooming, boarding and training &mdash; all free to search, all local.</p>
-    <form class="hero-search city-search-form" onsubmit="return false;">
-      <input type="text" placeholder="Enter your city or ZIP code..." aria-label="City or ZIP code" />
-      <button type="submit">Find Pet Services</button>
-    </form>
-    <div class="hero-trust">Free to use &middot; No spam &middot; Local results</div>
+    <p style="font-family:Nunito;font-weight:700;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber-dark);margin-bottom:12px">&#x1F43E; Your local pet resource</p>
+    <h1>Find Everything Your Pet Needs <span class="highlight">in Your City</span></h1>
+    <p class="hero-sub">Pet insurance quotes, local vets, adoption resources, grooming, boarding and training &mdash; all free to search, all local to you.</p>
+    <div class="hero-search">
+      <span style="font-size:1.1rem">&#x1F4CD;</span>
+      <input type="text" placeholder="Enter your city or ZIP code..." id="city-search">
+      <button onclick="searchCity()">Find Pet Services</button>
+    </div>
+    <div class="hero-trust">
+      <span><span class="trust-dot"></span>Free to use</span>
+      <span><span class="trust-dot"></span>No spam</span>
+      <span><span class="trust-dot"></span>Local results</span>
+      <span><span class="trust-dot"></span>No commitment</span>
+    </div>
   </div>
 </section>
 
-<div class="trust-bar">Trusted by pet owners across 12+ US cities &middot; PetInsurer comparison tool &middot; Local providers only</div>
-
-<section class="section" id="services">
-  <h2>What are you looking for?</h2>
-  <p class="section-sub">Pick a category to get started.</p>
+<section class="services-section" id="services">
+  <div class="container">
+    <p class="section-label">What are you looking for?</p>
+    <h2>Everything your pet needs, one place</h2>
+    <p class="section-sub">From insurance to adoption to grooming &mdash; find trusted local resources for your pet in minutes.</p>
+    <div class="services-grid">
+      <a href="/#insurance" class="service-card"><span class="service-emoji">&#x1F3E5;</span><div class="service-name">Pet Insurance</div><div class="service-desc">Compare plans free</div></a>
+      <a href="/adoption/" class="service-card"><span class="service-emoji">&#x1F43E;</span><div class="service-name">Adoption</div><div class="service-desc">Find a rescue near you</div></a>
+      <a href="/#vets" class="service-card"><span class="service-emoji">&#x1FA7A;</span><div class="service-name">Find a Vet</div><div class="service-desc">Local vets near you</div></a>
+      <a href="https://www.chewy.com/" class="service-card" target="_blank" rel="sponsored noopener"><span class="service-emoji">&#x1F6D2;</span><div class="service-name">Supplies</div><div class="service-desc">Food and gear</div></a>
+      <a href="https://www.barkbox.com/" class="service-card" target="_blank" rel="sponsored noopener"><span class="service-emoji">&#x1F4E6;</span><div class="service-name">BarkBox</div><div class="service-desc">Monthly toys and treats</div></a>
+      <a href="https://embarkvet.com/" class="service-card" target="_blank" rel="sponsored noopener"><span class="service-emoji">&#x1F9EC;</span><div class="service-name">DNA Test</div><div class="service-desc">Know your breed</div></a>
+      <a href="/#cities" class="service-card"><span class="service-emoji">&#x2702;</span><div class="service-name">Grooming</div><div class="service-desc">Find local groomers</div></a>
+      <a href="/#cities" class="service-card"><span class="service-emoji">&#x1F3E1;</span><div class="service-name">Boarding</div><div class="service-desc">Trusted overnight care</div></a>
+    </div>
+  </div>
 </section>
-<div class="services-grid"><a class="service-card" href="#cities"><div class="service-icon">&#127973;</div><div class="service-name">Pet Insurance</div><div class="service-desc">Compare plans</div></a><a class="service-card" href="#cities"><div class="service-icon">&#128062;</div><div class="service-name">Adoption</div><div class="service-desc">Find a rescue</div></a><a class="service-card" href="#cities"><div class="service-icon">&#129658;</div><div class="service-name">Vet Finder</div><div class="service-desc">Local vets</div></a><a class="service-card" href="#cities"><div class="service-icon">&#9986;&#65039;</div><div class="service-name">Grooming</div><div class="service-desc">Near you</div></a><a class="service-card" href="#cities"><div class="service-icon">&#128717;&#65039;</div><div class="service-name">Boarding</div><div class="service-desc">Overnight care</div></a><a class="service-card" href="#cities"><div class="service-icon">&#127890;</div><div class="service-name">Training</div><div class="service-desc">Local trainers</div></a><a class="service-card" href="#cities"><div class="service-icon">&#128722;</div><div class="service-name">Supplies</div><div class="service-desc">Food and gear</div></a><a class="service-card" href="#cities"><div class="service-icon">&#129516;</div><div class="service-name">DNA Test</div><div class="service-desc">Know your breed</div></a></div>
 
 <section class="insurance-section" id="insurance">
   <div class="container">
-    <h2 style="text-align:center;">Compare Pet Insurance Plans</h2>
-    <p class="section-sub">Free quotes, no spam, no commitment required.</p>
-  </div>
-  <div class="ins-grid">
-    <div class="ins-card featured">
-      <span class="ins-badge">Most popular</span>
-      <h3>PetInsurer</h3>
-      <p>Compare all major providers in 60 seconds. Find the best plan for your pet and budget.</p>
-      <a class="ins-cta" href="https://www.petinsurer.com/" rel="sponsored noopener" target="_blank">Compare Plans Free</a>
-    </div>
-    <div class="ins-card">
-      <h3>Trupanion</h3>
-      <p>Lifetime medical coverage for dogs and cats. Top-rated nationally.</p>
-      <a class="ins-cta outline" href="https://www.trupanion.com/" rel="sponsored noopener" target="_blank">Get a Quote</a>
-    </div>
-    <div class="ins-card">
-      <h3>Fetch</h3>
-      <p>Preferred partner of national shelters. Great for rescue pets.</p>
-      <a class="ins-cta outline" href="https://www.fetchpet.com/" rel="sponsored noopener" target="_blank">Get a Quote</a>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="cities">
-  <h2>Browse by City</h2>
-  <p class="section-sub">Local pet resources in your area.</p>
-</section>
-<div class="cities-grid"><a class="city-card" href="/cities/chicago/"><div class="city-name">Chicago, IL</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/houston/"><div class="city-name">Houston, TX</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/phoenix/"><div class="city-name">Phoenix, AZ</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/dallas/"><div class="city-name">Dallas, TX</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/los-angeles/"><div class="city-name">Los Angeles, CA</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/indianapolis/"><div class="city-name">Indianapolis, IN</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/nashville/"><div class="city-name">Nashville, TN</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/charlotte/"><div class="city-name">Charlotte, NC</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/jacksonville/"><div class="city-name">Jacksonville, FL</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/atlanta/"><div class="city-name">Atlanta, GA</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/denver/"><div class="city-name">Denver, CO</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a><a class="city-card" href="/cities/seattle/"><div class="city-name">Seattle, WA</div><div class="city-meta">Insurance, vets, adoption &amp; more</div></a></div>
-
-<section class="adoption-banner" id="adoption">
-  <div class="ab-text">
-    <h3>Ready to adopt a pet near you?</h3>
-    <p>Browse rescue pets available in your city. Every adoption listing is free. Find your next family member today.</p>
-  </div>
-  <a class="ab-cta" href="/adoption/">Find Pets Near Me &rarr;</a>
-</section>
-
-<section class="section">
-  <h2>Just got a new pet? Start here.</h2>
-  <p class="section-sub">Three things every new pet owner should do this week.</p>
-  <div class="new-pet-grid">
-    <div class="np-card">
-      <h3>Get Pet Insurance</h3>
-      <p>Protect your new pet from day one. Compare plans from top providers in 60 seconds.</p>
-      <a class="np-cta" href="https://www.petinsurer.com/" rel="sponsored noopener" target="_blank">Compare Plans &rarr;</a>
-    </div>
-    <div class="np-card">
-      <h3>Find a Local Vet</h3>
-      <p>Your new pet needs a checkup within the first week. Find trusted vets in your city.</p>
-      <a class="np-cta" href="#cities">Find a Vet &rarr;</a>
-    </div>
-    <div class="np-card">
-      <h3>Know Your Breed</h3>
-      <p>Just adopted? Find out exactly what breed your new dog is with an Embark DNA test.</p>
-      <a class="np-cta" href="https://embarkvet.com/" rel="sponsored noopener" target="_blank">Get DNA Test &rarr;</a>
+    <p class="section-label">Most important thing you can do</p>
+    <h2>Compare Pet Insurance Plans</h2>
+    <p class="section-sub">One emergency vet visit can cost $3,000 or more. Get covered today &mdash; free quotes, no commitment.</p>
+    <div class="insurance-grid">
+      <div class="ins-card featured">
+        <span class="ins-badge">&#x2B50; Most popular</span>
+        <h3 class="ins-name">PetInsurer</h3>
+        <p class="ins-desc">Compare all major pet insurance providers in 60 seconds. See plans from Trupanion, Fetch, Pets Best, and more side by side. The fastest way to find the right coverage at the best price.</p>
+        <a href="https://www.petinsurer.com/" target="_blank" rel="sponsored noopener"><button class="ins-cta">Compare Plans Free &rarr;</button></a>
+      </div>
+      <div class="ins-card">
+        <h3 class="ins-name">Trupanion</h3>
+        <p class="ins-desc">Lifetime medical coverage for dogs and cats. No payout limits &mdash; Trupanion pays your vet directly so you never have to wait for reimbursement.</p>
+        <a href="https://www.trupanion.com/" target="_blank" rel="sponsored noopener"><button class="ins-cta outline">Get a Quote</button></a>
+      </div>
+      <div class="ins-card">
+        <h3 class="ins-name">Fetch Pet Insurance</h3>
+        <p class="ins-desc">Preferred partner of national shelters and rescues. Great for newly adopted pets &mdash; covers more conditions than most competitors.</p>
+        <a href="https://www.fetchpet.com/" target="_blank" rel="sponsored noopener"><button class="ins-cta outline">Get a Quote</button></a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="cross-link">
-  <div class="cl-text">Also need home services? Pest control, roofing, gutters and more &mdash; find licensed local specialists at consumersupporthelp.com.</div>
-  <a href="https://consumersupporthelp.com/">Visit ConsumerSupportHelp &rarr;</a>
+<section class="cities-section" id="cities">
+  <div class="container">
+    <p class="section-label">Find your city</p>
+    <h2>Local Pet Resources Near You</h2>
+    <p class="section-sub">City-specific pet insurance quotes, local vets, adoption, and more.</p>
+    <div class="cities-grid">
+      <a href="/cities/chicago/" class="city-card"><div class="city-name">Chicago, IL</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/houston/" class="city-card"><div class="city-name">Houston, TX</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/phoenix/" class="city-card"><div class="city-name">Phoenix, AZ</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/dallas/" class="city-card"><div class="city-name">Dallas, TX</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/nashville/" class="city-card"><div class="city-name">Nashville, TN</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/charlotte/" class="city-card"><div class="city-name">Charlotte, NC</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/jacksonville/" class="city-card"><div class="city-name">Jacksonville, FL</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/atlanta/" class="city-card"><div class="city-name">Atlanta, GA</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/denver/" class="city-card"><div class="city-name">Denver, CO</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/seattle/" class="city-card"><div class="city-name">Seattle, WA</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/portland/" class="city-card"><div class="city-name">Portland, OR</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+      <a href="/cities/indianapolis/" class="city-card"><div class="city-name">Indianapolis, IN</div><div class="city-meta">Insurance &middot; Vets &middot; Adoption</div></a>
+    </div>
+  </div>
 </section>
 
-<section class="faq-section">
-  <h2>Common Questions</h2>
-  <div class="faq-item"><h3>Is petsinmycity.com free to use?</h3><p>Yes &mdash; completely free for pet owners. We connect you with pet insurance providers, local vets, adoption resources, and pet services at no cost. We earn referral fees from our partners when you choose to use their services.</p></div><div class="faq-item"><h3>How do I find pet services in my city?</h3><p>Enter your city or ZIP code in the search bar above and select the service you need. We&#39;ll show you local options for insurance, vets, adoption, grooming, boarding, and training near you.</p></div><div class="faq-item"><h3>What is the best pet insurance for my dog?</h3><p>The best pet insurance depends on your pet&#39;s age, breed, and your budget. We recommend using PetInsurer.com to compare plans from multiple providers side by side &mdash; it takes about 60 seconds and shows you the best options for your specific pet.</p></div><div class="faq-item"><h3>How do I find a vet near me?</h3><p>Use the Vet Finder section on your city page. Enter your city or ZIP code, select Find a Vet, and we&#39;ll connect you with licensed local veterinary practices in your area.</p></div><div class="faq-item"><h3>Is petsinmycity.com affiliated with any specific pet insurance company?</h3><p>We partner with multiple pet insurance providers including PetInsurer, Trupanion, Fetch, and others. We present all options fairly so you can choose the plan that best fits your pet and budget. Our goal is to help you find the right coverage, not to push one specific provider.</p></div>
+<section class="adoption-banner">
+  <div class="adoption-inner">
+    <span class="adoption-paw">&#x1F43E;</span>
+    <div class="adoption-text">
+      <h3>Ready to adopt a pet near you?</h3>
+      <p>Millions of pets are waiting for their forever home. Browse adoptable dogs, cats, and more from shelters in your city &mdash; every listing is free to search.</p>
+    </div>
+    <a href="/adoption/"><button class="adoption-cta">Find Pets Near Me</button></a>
+  </div>
 </section>
+
+<section class="new-pet-section">
+  <div class="container">
+    <p class="section-label">Just got a new pet?</p>
+    <h2>Start Here &mdash; Your First Week Checklist</h2>
+    <p class="section-sub">Everything a new pet owner needs to do in the first week. In order of importance.</p>
+    <div class="new-pet-cards">
+      <div class="new-pet-card">
+        <div class="new-pet-step">01</div>
+        <h3>Get Pet Insurance</h3>
+        <p>Enroll within 14 days of adoption to avoid pre-existing condition exclusions. Compare plans from top providers in 60 seconds.</p>
+        <a href="https://www.petinsurer.com/" target="_blank" rel="sponsored noopener" class="new-pet-link">Compare Plans &rarr;</a>
+      </div>
+      <div class="new-pet-card">
+        <div class="new-pet-step">02</div>
+        <h3>Schedule a Vet Checkup</h3>
+        <p>Your new pet needs a wellness exam within the first week. Find a trusted local vet in your city who accepts new patients.</p>
+        <a href="/#vets" class="new-pet-link">Find a Vet &rarr;</a>
+      </div>
+      <div class="new-pet-card">
+        <div class="new-pet-step">03</div>
+        <h3>Know Their Breed</h3>
+        <p>Adopted a mixed breed dog? An Embark DNA test reveals their exact breed mix and genetic health risks so you know what to watch for.</p>
+        <a href="https://embarkvet.com/" target="_blank" rel="sponsored noopener" class="new-pet-link">Get DNA Test &rarr;</a>
+      </div>
+      <div class="new-pet-card">
+        <div class="new-pet-step">04</div>
+        <h3>Set Up Food Delivery</h3>
+        <p>Chewy auto-ship means you never run out of food. Set up recurring delivery and earn free shipping on every order.</p>
+        <a href="https://www.chewy.com/" target="_blank" rel="sponsored noopener" class="new-pet-link">Shop Chewy &rarr;</a>
+      </div>
+      <div class="new-pet-card">
+        <div class="new-pet-step">05</div>
+        <h3>Try BarkBox</h3>
+        <p>Monthly toys and treats delivered to your door. Dog owners love the surprise unboxing &mdash; and so do their dogs.</p>
+        <a href="https://www.barkbox.com/" target="_blank" rel="sponsored noopener" class="new-pet-link">Get BarkBox &rarr;</a>
+      </div>
+      <div class="new-pet-card">
+        <div class="new-pet-step">06</div>
+        <h3>Find Local Training</h3>
+        <p>A professional trainer in your first month makes the next 15 years dramatically easier. Find a local trainer near you.</p>
+        <a href="/#cities" class="new-pet-link">Find Trainers &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container" style="padding:0 24px">
+  <div class="cross-link-bar" style="margin:0;border-radius:var(--radius-lg)">
+    <div><strong>Also need home services?</strong> Pest control, roofing, gutters and more &mdash; find licensed local specialists at consumersupporthelp.com</div>
+    <a href="https://consumersupporthelp.com" target="_blank" rel="noopener"><button class="cross-link-btn">Visit CSH &rarr;</button></a>
+  </div>
+</div>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <p class="section-label">Common questions</p>
+    <h2 style="margin-bottom:32px">Questions pet owners ask us</h2>
+    <div class="faq-item">
+      <p class="faq-q">Is petsinmycity.com free to use?</p>
+      <p class="faq-a">Yes &mdash; completely free for pet owners. We connect you with pet insurance providers, local vets, adoption resources, and pet services at no cost. We earn referral fees from our partners when you choose to use their services.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What is the best pet insurance right now?</p>
+      <p class="faq-a">It depends on your pet&#39;s age, breed, and your budget. The fastest way to find out is to use PetInsurer.com to compare plans from multiple providers at once &mdash; it takes about 60 seconds and shows you the best options for your specific pet. Trupanion and Fetch are both excellent for comprehensive coverage.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">When should I get pet insurance for my new pet?</p>
+      <p class="faq-a">As soon as possible &mdash; ideally within 14 days of adoption or purchase. Most policies have waiting periods of 14&ndash;30 days before coverage begins, and conditions diagnosed before enrollment are excluded as pre-existing. The younger and healthier your pet is at enrollment, the lower your premiums will be.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How do I find a vet near me?</p>
+      <p class="faq-a">Go to your city page and use the Vet Finder section. Enter your ZIP code and pet type and we&#39;ll connect you with licensed local veterinary practices that are accepting new patients in your area.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Does petsinmycity.com sell my information?</p>
+      <p class="faq-a">No. Your information is never sold or shared with third parties. We connect you with one local provider based on your needs &mdash; not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC respects your privacy.</p>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PetsInMyCity",
+  "url": "https://petsinmycity.com",
+  "description": "Free pet resource platform connecting pet owners with insurance, vets, adoption, and local pet services across the United States.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "help@elitemediagroup.io",
+    "contactType": "customer service"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is petsinmycity.com free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free for pet owners. We earn referral fees from partners when you choose to use their services."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I get pet insurance for my new pet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As soon as possible, ideally within 14 days of adoption or purchase. Most policies have waiting periods before coverage begins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best pet insurance right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your pet's age, breed, and budget. Use PetInsurer.com to compare plans from multiple providers at once."
+      }
+    }
+  ]
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FTEYNNQ0"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-M3FTEYNNQ0');
+</script>
 
 <div id="site-footer"></div>
-
-<script src="/assets/script.js" defer></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FTEYNNQ0"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-M3FTEYNNQ0");</script>
 </body>
 </html>
