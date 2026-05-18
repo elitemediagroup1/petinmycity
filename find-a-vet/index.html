@@ -61,7 +61,7 @@
     var full=document.getElementById('vet-map-open-full');
     if(!sec||!fr)return;
     var q='veterinarians+near+'+encodeURIComponent(z);
-    fr.src='https://www.google.com/maps?q='+q+'&output=embed';
+    fr.src='https://maps.google.com/maps?q='+q+'&t=&z=13&ie=UTF8&iwloc=&output=embed';
     if(full)full.href='https://www.google.com/maps/search/'+q;
     if(lab)lab.textContent='Vets near '+z;
     sec.style.display='block';
