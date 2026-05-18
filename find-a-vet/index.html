@@ -28,12 +28,54 @@
       <h2 style="font-family:Nunito;font-weight:800;font-size:1.4rem;color:var(--charcoal);margin-bottom:6px;text-align:center">Search for vets near you</h2>
       <p style="font-size:0.875rem;color:var(--gray);text-align:center;margin-bottom:20px">Opens Google Maps showing local vets with ratings, hours, and directions</p>
       <input type="text" id="vet-zip-input" placeholder="Enter your ZIP code" maxlength="5" inputmode="numeric" pattern="[0-9]*" style="width:100%;padding:16px 20px;border:2px solid var(--border);border-radius:999px;font-size:1.1rem;font-family:Inter;margin-bottom:12px;outline:none;text-align:center">
-      <button onclick="var z=document.getElementById('vet-zip-input').value.trim();if(z.length===5){window.open('https://www.google.com/maps/search/veterinarians+near+'+z,'_blank');}else{alert('Please enter a 5-digit ZIP code');}" style="width:100%;padding:16px;background:var(--amber);color:white;border:none;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1.05rem;cursor:pointer">Find Vets Near Me &rarr;</button>
+      <button id="vet-search-btn" style="width:100%;padding:16px;background:var(--amber);color:white;border:none;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1.05rem;cursor:pointer">Find Vets Near Me &rarr;</button>
           <p style="text-align:center;margin-top:12px;font-size:0.85rem;color:var(--gray)">Or <a href="https://www.google.com/maps/search/veterinarians+near+me" target="_blank" rel="noopener" style="color:var(--amber-dark);font-weight:600">search Google Maps directly &rarr;</a></p>
       <p style="font-size:0.75rem;color:var(--gray);text-align:center;margin-top:10px">Your ZIP is not stored or shared.</p>
     </div>
   </div>
 </section>
+
+<section id="vet-map-section" style="display:none;padding:0 24px 56px;background:#fffaf3">
+  <div class="container" style="max-width:1100px;margin:0 auto">
+    <div style="background:white;border:2px solid var(--amber);border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.08)">
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:#fff8ec;border-bottom:1px solid #f3e4c2">
+        <strong id="vet-map-label" style="font-family:Nunito;color:#333;font-size:0.95rem">Vets near &mdash;</strong>
+        <button id="vet-map-close" style="background:transparent;border:none;color:#888;cursor:pointer;font-size:1.1rem;font-weight:700" aria-label="Close map">&times;</button>
+      </div>
+      <div id="vet-map-frame-wrap" style="position:relative;width:100%;height:560px;background:#f5f5f5">
+        <iframe id="vet-map-frame" title="Veterinarians map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:100%;border:0;display:block" allowfullscreen></iframe>
+      </div>
+      <div style="padding:12px 20px;font-family:Nunito;font-size:0.85rem;color:#666;background:#fafafa;border-top:1px solid #eee;text-align:center">Powered by Google Maps. <a id="vet-map-open-full" href="#" target="_blank" rel="noopener" style="color:var(--amber);font-weight:700;text-decoration:none">Open full map &rarr;</a></div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  function showVetMap(){
+    var i=document.getElementById('vet-zip-input');
+    var z=i?i.value.trim():'';
+    if(!/^\d{5}$/.test(z)){alert('Please enter a 5-digit ZIP code');return;}
+    var sec=document.getElementById('vet-map-section');
+    var fr=document.getElementById('vet-map-frame');
+    var lab=document.getElementById('vet-map-label');
+    var full=document.getElementById('vet-map-open-full');
+    if(!sec||!fr)return;
+    var q='veterinarians+near+'+encodeURIComponent(z);
+    fr.src='https://www.google.com/maps?q='+q+'&output=embed';
+    if(full)full.href='https://www.google.com/maps/search/'+q;
+    if(lab)lab.textContent='Vets near '+z;
+    sec.style.display='block';
+    setTimeout(function(){sec.scrollIntoView({behavior:'smooth',block:'start'});},80);
+  }
+  var btn=document.getElementById('vet-search-btn');
+  if(btn){btn.addEventListener('click',showVetMap);}
+  var zip=document.getElementById('vet-zip-input');
+  if(zip){zip.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();showVetMap();}});}
+  var cl=document.getElementById('vet-map-close');
+  if(cl){cl.addEventListener('click',function(){var s=document.getElementById('vet-map-section');var f=document.getElementById('vet-map-frame');if(f)f.src='';if(s)s.style.display='none';});}
+  window.showVetMap=showVetMap;
+})();
+</script>
 
 <section style="padding:56px 24px;background:white">
   <div class="container" style="max-width:1120px;margin:0 auto">
