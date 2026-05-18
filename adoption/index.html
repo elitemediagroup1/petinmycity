@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Adopt a Pet Near You &mdash; Find Local Shelters and Rescues | PetsInMyCity</title>
+<meta name="description" content="Find adoptable pets near you. Search 200,000+ pets from 14,000+ shelters by ZIP code. Powered by Petfinder. Free, no signup required.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://petsinmycity.com/adoption/">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/script.js" defer></script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<section style="position:relative;height:540px;overflow:hidden">
+  <img src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=1400&auto=format&fit=crop&q=80" alt="Dog ready for adoption" style="width:100%;height:100%;object-fit:cover;object-position:center 30%">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(251,113,133,0.1) 0%,rgba(0,0,0,0.6) 100%)"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:48px 24px;text-align:center">
+    <p style="font-family:Nunito;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:10px">&#128062; Adopt a Pet</p>
+    <h1 style="font-family:Nunito;font-weight:900;font-size:2.8rem;color:white;margin-bottom:12px;max-width:600px;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,0.3)">Find Your Next Best Friend</h1>
+    <p style="color:rgba(255,255,255,0.9);font-size:1rem;max-width:480px;margin-bottom:28px">Millions of pets need a forever home. Search local shelters and rescues near you &mdash; free.</p>
+  </div>
+</section>
+
+<section style="background:var(--coral-light);padding:0 24px 48px;border-bottom:2px solid #fecdd3">
+  <div class="container" style="max-width:1120px;margin:0 auto">
+    <div style="background:white;border:2px solid var(--coral);border-radius:16px;padding:36px 32px;max-width:560px;margin:-48px auto 0;position:relative;z-index:10;box-shadow:0 8px 32px rgba(0,0,0,0.12)">
+      <h2 style="font-family:Nunito;font-weight:800;font-size:1.4rem;color:var(--charcoal);text-align:center;margin-bottom:6px">Search adoptable pets near you</h2>
+      <p style="font-size:0.875rem;color:var(--gray);text-align:center;margin-bottom:20px">Powered by Petfinder &mdash; 200,000+ pets from 14,000+ shelters updated daily</p>
+      <input type="text" id="adopt-zip" placeholder="Enter your ZIP code" maxlength="5" inputmode="numeric" style="width:100%;padding:16px 20px;border:2px solid var(--border);border-radius:999px;font-size:1.1rem;font-family:Inter;margin-bottom:12px;text-align:center">
+      <select id="adopt-type" style="width:100%;padding:14px 20px;border:2px solid var(--border);border-radius:999px;font-size:1rem;font-family:Inter;background:white;margin-bottom:12px">
+        <option value="dog">Dogs</option>
+        <option value="cat">Cats</option>
+        <option value="">All pets</option>
+      </select>
+      <button onclick="findPets()" style="width:100%;padding:16px;background:var(--coral);color:white;border:none;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1.05rem;cursor:pointer">Find Adoptable Pets &rarr;</button>
+      <p style="font-size:0.75rem;color:var(--gray);text-align:center;margin-top:10px">Your ZIP is not stored or shared.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:56px 24px;background:white">
+  <div class="container" style="max-width:1120px;margin:0 auto">
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);text-align:center;margin-bottom:8px">Your first week checklist</h2>
+    <p style="color:var(--gray);text-align:center;margin-bottom:36px;font-size:0.95rem">Everything you need to do in order.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+      <div style="border-radius:16px;overflow:hidden;height:500px"><img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=1400&auto=format&fit=crop&q=80" alt="New pet owner holding puppy" style="width:100%;height:100%;object-fit:cover"></div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:var(--amber-light);border-left:4px solid var(--amber);border-radius:8px;padding:16px">
+          <p style="font-family:Nunito;font-weight:700;color:var(--charcoal);margin-bottom:4px">1. Get pet insurance today</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:8px">Enroll within 14 days to avoid pre-existing exclusions.</p>
+          <a href="https://www.petinsurer.com/" target="_blank" rel="sponsored noopener" style="color:var(--amber-dark);font-weight:700;font-size:0.85rem">Compare Plans &rarr;</a>
+        </div>
+        <div style="background:var(--amber-light);border-left:4px solid var(--amber);border-radius:8px;padding:16px">
+          <p style="font-family:Nunito;font-weight:700;color:var(--charcoal);margin-bottom:4px">2. Schedule vet checkup</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:8px">Within the first week. Even if they came with records.</p>
+          <a href="/find-a-vet/" style="color:var(--amber-dark);font-weight:700;font-size:0.85rem">Find a Vet &rarr;</a>
+        </div>
+        <div style="background:#f0fdf4;border-left:4px solid var(--sage-dark);border-radius:8px;padding:16px">
+          <p style="font-family:Nunito;font-weight:700;color:var(--charcoal);margin-bottom:4px">3. Find out their breed</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:8px">Embark DNA reveals exact breed mix and health risks.</p>
+          <a href="https://embarkvet.com/" target="_blank" rel="sponsored noopener" style="color:#15803d;font-weight:700;font-size:0.85rem">Get DNA Test &rarr;</a>
+        </div>
+        <div style="background:#f0fdf4;border-left:4px solid var(--sage-dark);border-radius:8px;padding:16px">
+          <p style="font-family:Nunito;font-weight:700;color:var(--charcoal);margin-bottom:4px">4. Set up food delivery</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:8px">Chewy auto-ship &mdash; free shipping on recurring orders.</p>
+          <a href="https://www.chewy.com/" target="_blank" rel="sponsored noopener" style="color:#15803d;font-weight:700;font-size:0.85rem">Shop Chewy &rarr;</a>
+        </div>
+        <div style="background:var(--coral-light);border-left:4px solid var(--coral);border-radius:8px;padding:16px">
+          <p style="font-family:Nunito;font-weight:700;color:var(--charcoal);margin-bottom:4px">5. Try BarkBox</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:8px">Monthly toys and treats. First box free.</p>
+          <a href="https://www.barkbox.com/" target="_blank" rel="sponsored noopener" style="color:var(--coral-dark);font-weight:700;font-size:0.85rem">Get BarkBox &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:56px 24px;background:var(--light-gray)">
+  <div class="container" style="max-width:1120px;margin:0 auto">
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);text-align:center;margin-bottom:32px">Where to find pets to adopt</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+        <div style="height:180px;overflow:hidden"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1400&auto=format&fit=crop&q=80" alt="Dogs at shelter" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <p style="font-family:Nunito;font-weight:800;font-size:1rem;color:var(--charcoal);margin-bottom:6px">Petfinder</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:12px">200,000+ adoptable pets. The largest database in the US.</p>
+          <a href="https://www.petfinder.com/" target="_blank" rel="sponsored noopener" style="color:var(--coral-dark);font-weight:700;font-size:0.875rem">Search Petfinder &rarr;</a>
+        </div>
+      </div>
+      <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+        <div style="height:180px;overflow:hidden"><img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1400&auto=format&fit=crop&q=80" alt="Cat and dog together" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <p style="font-family:Nunito;font-weight:800;font-size:1rem;color:var(--charcoal);margin-bottom:6px">ASPCA</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:12px">Nationwide shelter resources and adoption programs.</p>
+          <a href="https://www.aspca.org/adopt/" target="_blank" rel="sponsored noopener" style="color:var(--coral-dark);font-weight:700;font-size:0.875rem">Visit ASPCA &rarr;</a>
+        </div>
+      </div>
+      <div style="background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)">
+        <div style="height:180px;overflow:hidden"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=1400&auto=format&fit=crop&q=80" alt="Kitten up for adoption" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <p style="font-family:Nunito;font-weight:800;font-size:1rem;color:var(--charcoal);margin-bottom:6px">Adopt-a-Pet</p>
+          <p style="font-size:0.85rem;color:var(--gray);margin-bottom:12px">Millions of pets. Partner of PetSmart Charities.</p>
+          <a href="https://www.adoptapet.com/" target="_blank" rel="sponsored noopener" style="color:var(--coral-dark);font-weight:700;font-size:0.875rem">Visit Adopt-a-Pet &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:56px 24px;background:var(--cream)">
+  <div class="container" style="max-width:720px;margin:0 auto">
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);text-align:center;margin-bottom:32px">Quick answers</h2>
+    <div class="faq-item"><p class="faq-q">How much does it cost to adopt?</p><p class="faq-a">$50&ndash;$500 typically &mdash; includes spay/neuter, first vaccines, and microchip. Far cheaper than buying from a breeder.</p></div>
+    <div class="faq-item"><p class="faq-q">What if I&#39;ve never owned a pet before?</p><p class="faq-a">Shelters love first-time owners. Most have counselors who help match you with a pet that fits your lifestyle and experience level.</p></div>
+    <div class="faq-item"><p class="faq-q">Can I adopt online?</p><p class="faq-a">Yes &mdash; Petfinder and Adopt-a-Pet let you browse, message shelters, and start applications online. Final approval usually requires an in-person visit.</p></div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does it cost to adopt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$50-$500 typically - includes spay/neuter, first vaccines, and microchip. Far cheaper than buying from a breeder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I have never owned a pet before?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Shelters love first-time owners. Most have counselors who help match you with a pet that fits your lifestyle and experience level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I adopt online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes - Petfinder and Adopt-a-Pet let you browse, message shelters, and start applications online. Final approval usually requires an in-person visit."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+function findPets(){
+  var zip = document.getElementById('adopt-zip').value.trim();
+  var type = document.getElementById('adopt-type').value;
+  if (zip.length !== 5 || isNaN(zip)) {
+    alert('Please enter a valid 5-digit ZIP code.');
+    return;
+  }
+  var url = 'https://www.petfinder.com/search/?type=' + type + '&location=' + zip;
+  window.open(url, '_blank');
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FTEYNNQ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-M3FTEYNNQ0');
+</script>
+
+<div id="site-footer"></div>
+</body>
+</html>
