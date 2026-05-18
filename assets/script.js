@@ -11,7 +11,7 @@
       '<div class="pimc-nav-links">'+
         '<a href="/#insurance">Insurance</a>'+
         '<a href="/adoption/">Adoption</a>'+
-        '<a href="/#vets">Find a Vet</a>'+
+        '<a href="/find-a-vet/">Find a Vet</a>'+
         '<a href="/#cities">Cities</a>'+
       '</div>'+
       '<a href="/#insurance" class="nav-cta">Get Free Quote</a>'+
@@ -36,7 +36,7 @@
           '<div style="display:flex;flex-direction:column;gap:8px">'+
             '<a href="/#insurance" class="footer-link">Pet Insurance</a>'+
             '<a href="/adoption/" class="footer-link">Adoption</a>'+
-            '<a href="/#vets" class="footer-link">Find a Vet</a>'+
+            '<a href="/find-a-vet/" class="footer-link">Find a Vet</a>'+
             '<a href="/#cities" class="footer-link">Browse Cities</a>'+
           '</div>'+
         '</div>'+
