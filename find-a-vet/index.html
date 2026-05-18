@@ -28,7 +28,8 @@
       <h2 style="font-family:Nunito;font-weight:800;font-size:1.4rem;color:var(--charcoal);margin-bottom:6px;text-align:center">Search for vets near you</h2>
       <p style="font-size:0.875rem;color:var(--gray);text-align:center;margin-bottom:20px">Opens Google Maps showing local vets with ratings, hours, and directions</p>
       <input type="text" id="vet-zip-input" placeholder="Enter your ZIP code" maxlength="5" inputmode="numeric" pattern="[0-9]*" style="width:100%;padding:16px 20px;border:2px solid var(--border);border-radius:999px;font-size:1.1rem;font-family:Inter;margin-bottom:12px;outline:none;text-align:center">
-      <button onclick="findVets()" style="width:100%;padding:16px;background:var(--amber);color:white;border:none;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1.05rem;cursor:pointer">Find Vets Near Me &rarr;</button>
+      <button onclick="var z=document.getElementById('vet-zip-input').value.trim();if(z.length===5){window.open('https://www.google.com/maps/search/veterinarians+near+'+z,'_blank');}else{alert('Please enter a 5-digit ZIP code');}" style="width:100%;padding:16px;background:var(--amber);color:white;border:none;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1.05rem;cursor:pointer">Find Vets Near Me &rarr;</button>
+          <p style="text-align:center;margin-top:12px;font-size:0.85rem;color:var(--gray)">Or <a href="https://www.google.com/maps/search/veterinarians+near+me" target="_blank" rel="noopener" style="color:var(--amber-dark);font-weight:600">search Google Maps directly &rarr;</a></p>
       <p style="font-size:0.75rem;color:var(--gray);text-align:center;margin-top:10px">Your ZIP is not stored or shared.</p>
     </div>
   </div>
@@ -131,18 +132,6 @@
       }
     }
   ]
-}
-</script>
-
-<script>
-function findVets(){
-  var zip = document.getElementById('vet-zip-input').value.trim();
-  if (zip.length !== 5 || isNaN(zip)) {
-    alert('Please enter a valid 5-digit ZIP code.');
-    return;
-  }
-  var query = encodeURIComponent('veterinarians near ' + zip);
-  window.open('https://www.google.com/maps/search/' + query, '_blank');
 }
 </script>
 
