@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find a Vet Near Me &mdash; Search by ZIP | PetsInMyCity</title>
+<meta name="description" content="Find a trusted veterinarian near you. Search by ZIP code for local vets with real ratings, hours, and directions. Powered by Google Maps.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://petsinmycity.com/find-a-vet/">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/script.js" defer></script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<section style="position:relative;height:500px;overflow:hidden">
+  <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1400&auto=format&fit=crop&q=80" alt="Veterinarian with dog" style="width:100%;height:100%;object-fit:cover;object-position:center 20%">
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.6) 100%)"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:48px 24px;text-align:center">
+    <h1 style="font-family:Nunito;font-weight:900;font-size:2.6rem;color:white;margin-bottom:12px;text-shadow:0 2px 8px rgba(0,0,0,0.3)">Find a Trusted Vet Near You</h1>
+    <p style="color:rgba(255,255,255,0.9);font-size:1rem;margin-bottom:0;text-shadow:0 1px 4px rgba(0,0,0,0.3)">Real ratings. Real hours. Real phone numbers. Powered by Google Maps.</p>
+  </div>
+</section>
+
+<section style="background:var(--cream);padding:0 24px 48px">
+  <div class="container" style="max-width:1120px;margin:0 auto">
+    <div style="background:white;border:2px solid var(--amber);border-radius:16px;padding:36px 32px;max-width:560px;margin:-48px auto 0;position:relative;z-index:10;box-shadow:0 8px 32px rgba(0,0,0,0.12)">
+      <h2 style="font-family:Nunito;font-weight:800;font-size:1.4rem;color:var(--charcoal);margin-bottom:6px;text-align:center">Search for vets near you</h2>
+      <p style="font-size:0.875rem;color:var(--gray);text-align:center;margin-bottom:20px">Opens Google Maps showing local vets with ratings, hours, and directions</p>
+      <input type="text" id="vet-zip-input" placeholder="Enter your ZIP code" maxlength="5" inputmode="numeric" pattern="[0-9]*" style="width:100%;padding:16px 20px;border:2px solid var(--border);border-radius:999px;font-size:1.1rem;font-family:Inter;margin-bottom:12px;outline:none;text-align:center">
+      <button onclick="findVets()" style="width:100%;padding:16px;background:var(--amber);color:white;border:none;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1.05rem;cursor:pointer">Find Vets Near Me &rarr;</button>
+      <p style="font-size:0.75rem;color:var(--gray);text-align:center;margin-top:10px">Your ZIP is not stored or shared.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:56px 24px;background:white">
+  <div class="container" style="max-width:1120px;margin:0 auto">
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);text-align:center;margin-bottom:32px">How to choose the right vet</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+      <div style="border-radius:12px;overflow:hidden;border:2px solid var(--border)">
+        <div style="height:200px;overflow:hidden"><img src="https://images.unsplash.com/photo-1612531386530-97286d463994?w=1400&auto=format&fit=crop&q=80" alt="Puppy at vet checkup" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <h3 style="font-family:Nunito;font-weight:700;font-size:1rem;color:var(--charcoal);margin-bottom:6px">&#128205; Location and hours</h3>
+          <p style="font-size:0.875rem;color:var(--gray);line-height:1.6">Find a vet within 15 minutes of home. Emergencies don&#39;t wait &mdash; proximity matters.</p>
+        </div>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;border:2px solid var(--border)">
+        <div style="height:200px;overflow:hidden"><img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=1400&auto=format&fit=crop&q=80" alt="Happy dog at vet" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <h3 style="font-family:Nunito;font-weight:700;font-size:1rem;color:var(--charcoal);margin-bottom:6px">&#11088; Google reviews</h3>
+          <p style="font-size:0.875rem;color:var(--gray);line-height:1.6">Look for consistent praise for bedside manner and clear communication with pet owners.</p>
+        </div>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;border:2px solid var(--border)">
+        <div style="height:200px;overflow:hidden"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1400&auto=format&fit=crop&q=80" alt="Cat at vet" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <h3 style="font-family:Nunito;font-weight:700;font-size:1rem;color:var(--charcoal);margin-bottom:6px">&#128062; Species experience</h3>
+          <p style="font-size:0.875rem;color:var(--gray);line-height:1.6">Not all vets see all animals. Confirm they have experience with your specific pet type.</p>
+        </div>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;border:2px solid var(--border)">
+        <div style="height:200px;overflow:hidden"><img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=1400&auto=format&fit=crop&q=80" alt="Person holding puppy" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:20px">
+          <h3 style="font-family:Nunito;font-weight:700;font-size:1rem;color:var(--charcoal);margin-bottom:6px">&#128222; New patients</h3>
+          <p style="font-size:0.875rem;color:var(--gray);line-height:1.6">Call ahead to confirm they are accepting new patients. Popular practices fill up fast.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--charcoal);padding:48px 24px">
+  <div class="container" style="max-width:720px;margin:0 auto;text-align:center">
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:white;margin-bottom:32px">What a first visit costs</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+      <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:24px">
+        <p style="font-family:Nunito;font-weight:900;font-size:1.6rem;color:var(--amber);margin-bottom:4px">$50&ndash;$150</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7)">Wellness exam</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:24px">
+        <p style="font-family:Nunito;font-weight:900;font-size:1.6rem;color:var(--amber);margin-bottom:4px">$15&ndash;$30</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7)">Per vaccine</p>
+      </div>
+      <div style="background:rgba(255,255,255,0.08);border-radius:12px;padding:24px">
+        <p style="font-family:Nunito;font-weight:900;font-size:1.6rem;color:var(--amber);margin-bottom:4px">$150&ndash;$500</p>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.7)">Emergency visit</p>
+      </div>
+    </div>
+    <p style="color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:20px">Pet insurance covers most of these costs after your deductible.</p>
+    <a href="https://www.petinsurer.com/" target="_blank" rel="sponsored noopener" style="display:inline-block;margin-top:20px"><button style="background:var(--amber);color:white;border:none;border-radius:999px;padding:14px 28px;font-family:Nunito;font-weight:800;font-size:0.95rem;cursor:pointer">Get Pet Insurance Before You Go &rarr;</button></a>
+  </div>
+</section>
+
+<section style="padding:56px 24px;background:var(--cream)">
+  <div class="container" style="max-width:720px;margin:0 auto">
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);margin-bottom:32px;text-align:center">Quick answers</h2>
+    <div class="faq-item"><p class="faq-q">How do I find a good vet?</p><p class="faq-a">Use the ZIP search above to see Google Maps results &mdash; check ratings, hours, and reviews. Call ahead to confirm they accept new patients.</p></div>
+    <div class="faq-item"><p class="faq-q">How much does a vet visit cost?</p><p class="faq-a">A wellness exam is $50&ndash;$150. Vaccines run $15&ndash;$30 each. Emergency visits start around $150 and can climb fast without insurance.</p></div>
+    <div class="faq-item"><p class="faq-q">When should my pet first see a vet?</p><p class="faq-a">Within the first week after adoption or purchase &mdash; even if records came with the pet. Puppies and kittens need their first checkup by 8 weeks.</p></div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find a good vet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the ZIP search above to see Google Maps results - check ratings, hours, and reviews. Call ahead to confirm they accept new patients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a vet visit cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A wellness exam is $50-$150. Vaccines run $15-$30 each. Emergency visits start around $150 and can climb fast without insurance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should my pet first see a vet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Within the first week after adoption or purchase - even if records came with the pet. Puppies and kittens need their first checkup by 8 weeks."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+function findVets(){
+  var zip = document.getElementById('vet-zip-input').value.trim();
+  if (zip.length !== 5 || isNaN(zip)) {
+    alert('Please enter a valid 5-digit ZIP code.');
+    return;
+  }
+  var query = encodeURIComponent('veterinarians near ' + zip);
+  window.open('https://www.google.com/maps/search/' + query, '_blank');
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FTEYNNQ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-M3FTEYNNQ0');
+</script>
+
+<div id="site-footer"></div>
+</body>
+</html>
