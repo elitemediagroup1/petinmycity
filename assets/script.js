@@ -4,8 +4,8 @@
   function buildHeader(){
     return `<nav class="pimc-nav">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
-    <a href="/" class="pimc-logo">
-      <span class="logo-pets">pets</span><span class="logo-inmy">inmy</span><span class="logo-city">city</span>
+    <a href="/" style="display:flex;align-items:center;text-decoration:none">
+      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:52px;width:auto;display:block">
     </a>
     <div class="pimc-nav-links" id="pimc-nav-links">
       <a href="/pet-insurance/">Insurance</a>
@@ -36,11 +36,9 @@
     return '<footer class="pimc-footer"><div class="container">'+
       '<div class="footer-inner">'+
         '<div>'+
-          '<div class="pimc-logo" style="margin-bottom:12px">'+
-            '<span class="logo-pets">pets</span>'+
-            '<span class="logo-inmy">inmy</span>'+
-            '<span class="logo-city">city</span>'+
-          '</div>'+
+          '<a href="/" style="display:flex;align-items:center;text-decoration:none">'+
+          '<img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:52px;width:auto;display:block">'+
+          '</a>'+
           '<p style="font-size:0.85rem;color:rgba(255,255,255,0.5);max-width:280px;line-height:1.6">'+
             'Free pet resources for pet owners across America. Insurance, vets, adoption, and more &mdash; all local, all free.'+
           '</p>'+
@@ -128,6 +126,16 @@
   };
 
   function mount(){
+    // Inject favicon if missing
+    try {
+      if (!document.querySelector('link[rel~="icon"]')) {
+        var fav = document.createElement('link');
+        fav.rel = 'icon';
+        fav.type = 'image/png';
+        fav.href = '/assets/logo.png';
+        document.head.appendChild(fav);
+      }
+    } catch(e){}
     var h = document.getElementById('site-header') || document.querySelector('.site-header');
     if(h){h.innerHTML = buildHeader();}
     var f = document.getElementById('site-footer') || document.querySelector('.site-footer');
