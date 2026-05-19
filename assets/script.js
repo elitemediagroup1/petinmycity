@@ -5,7 +5,7 @@
     return `<nav class="pimc-nav">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
     <a href="/" style="display:flex;align-items:center;text-decoration:none">
-      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:52px;width:auto;display:block">
+      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:72px;width:72px;display:block;object-fit:contain">
     </a>
     <div class="pimc-nav-links" id="pimc-nav-links">
       <a href="/pet-insurance/">Insurance</a>
@@ -37,7 +37,7 @@
       '<div class="footer-inner">'+
         '<div>'+
           '<a href="/" style="display:flex;align-items:center;text-decoration:none">'+
-          '<img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:52px;width:auto;display:block">'+
+          '<img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:72px;width:72px;display:block;object-fit:contain">'+
           '</a>'+
           '<p style="font-size:0.85rem;color:rgba(255,255,255,0.5);max-width:280px;line-height:1.6">'+
             'Free pet resources for pet owners across America. Insurance, vets, adoption, and more &mdash; all local, all free.'+
