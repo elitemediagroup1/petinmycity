@@ -4,7 +4,7 @@
   if (window.__lucyLoaded) return;
   window.__lucyLoaded = true;
 
-  var LUCY_AVATAR = 'https://media1.tenor.com/m/9g7cBK_0SJ8AAAAC/hi-hello.gif';
+  var LUCY_AVATAR = 'https://media1.tenor.com/m/W_U_UgAgw3oAAAAC/doggy-golde.gif';
   var ENDPOINT = '/.netlify/functions/lucy-chat';
 
   var STYLES = [
