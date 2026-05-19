@@ -13,6 +13,7 @@
         '<a href="/adoption/">Adoption</a>'+
         '<a href="/dog-care/">Dog Care</a>'+
         '<a href="/find-a-vet/">Find a Vet</a>'+
+        '<a href="/lucy/" style="color:var(--amber);font-weight:700">\u2728 Lucy AI</a>'+
         '<a href="/#cities">Cities</a>'+
       '</div>'+
       '<a href="/#insurance" class="nav-cta">Get Free Quote</a>'+
@@ -115,10 +116,18 @@
   };
 
   function mount(){
-    var h = document.getElementById('site-header');
+    var h = document.getElementById('site-header') || document.querySelector('.site-header');
     if(h){h.innerHTML = buildHeader();}
-    var f = document.getElementById('site-footer');
+    var f = document.getElementById('site-footer') || document.querySelector('.site-footer');
     if(f){f.innerHTML = buildFooter();}
+    // Lucy AI widget: appended to body via lucy.js loaded from index pages.
+    if(!document.getElementById('lucy-script-tag')){
+      var ls = document.createElement('script');
+      ls.id = 'lucy-script-tag';
+      ls.src = '/assets/lucy.js';
+      ls.defer = true;
+      document.head.appendChild(ls);
+    }
     document.querySelectorAll('a[href^="#"], a[href*="/#"]').forEach(function(a){
       a.addEventListener('click', function(ev){
         var href = a.getAttribute('href')||'';
