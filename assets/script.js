@@ -2,22 +2,34 @@
 
 (function(){
   function buildHeader(){
-    return '<nav class="pimc-nav">'+
-      '<a href="/" class="pimc-logo">'+
-        '<span class="logo-pets">pets</span>'+
-        '<span class="logo-inmy">inmy</span>'+
-        '<span class="logo-city">city</span>'+
-      '</a>'+
-      '<div class="pimc-nav-links">'+
-        '<a href="/#insurance">Insurance</a>'+
-        '<a href="/adoption/">Adoption</a>'+
-        '<a href="/dog-care/">Dog Care</a>'+
-        '<a href="/find-a-vet/">Find a Vet</a>'+
-        '<a href="/lucy/" style="color:var(--amber);font-weight:700">\u2728 Lucy AI</a>'+
-        '<a href="/#cities">Cities</a>'+
-      '</div>'+
-      '<a href="/#insurance" class="nav-cta">Get Free Quote</a>'+
-    '</nav>';
+    return `<nav class="pimc-nav">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a href="/" class="pimc-logo">
+      <span class="logo-pets">pets</span><span class="logo-inmy">inmy</span><span class="logo-city">city</span>
+    </a>
+    <div class="pimc-nav-links" id="pimc-nav-links">
+      <a href="/pet-insurance/">Insurance</a>
+      <a href="/adoption/">Adoption</a>
+      <a href="/dog-care/">Dog Care</a>
+      <a href="/find-a-vet/">Find a Vet</a>
+      <a href="/lucy/" style="color:var(--amber);font-weight:700">&#10024; Lucy AI</a>
+      <a href="/#cities">Cities</a>
+    </div>
+    <button id="pimc-hamburger" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;align-items:center;justify-content:center">
+      <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
+      <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
+      <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
+    </button>
+  </div>
+  <div id="pimc-mobile-nav" style="display:none;background:white;border-top:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:0">
+    <a href="/pet-insurance/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#127973;&#65039; Insurance</a>
+    <a href="/adoption/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#128062; Adoption</a>
+    <a href="/dog-care/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129436; Dog Care</a>
+    <a href="/find-a-vet/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129658; Find a Vet</a>
+    <a href="/lucy/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:700;font-size:1rem;color:var(--amber);text-decoration:none">&#10024; Lucy AI</a>
+    <a href="/#cities" style="display:block;padding:14px 0;font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#127961;&#65039; Cities</a>
+  </div>
+</nav>`;
   }
 
   function buildFooter(){
@@ -146,3 +158,17 @@
     document.addEventListener('DOMContentLoaded', mount);
   } else { mount(); }
 })();
+
+window.toggleMobileNav = function toggleMobileNav() {
+  var mobileNav = document.getElementById('pimc-mobile-nav');
+  var hamburger = document.getElementById('pimc-hamburger');
+  if (!mobileNav || !hamburger) return;
+  if (mobileNav.style.display === 'flex') {
+    mobileNav.style.display = 'none';
+    hamburger.setAttribute('aria-expanded', 'false');
+  } else {
+    mobileNav.style.display = 'flex';
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+};
+
