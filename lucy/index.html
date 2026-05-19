@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lucy AI &mdash; Your Pet Advisor Powered by AI | PetsInMyCity</title>
+<meta name="description" content="Ask Lucy anything about your pet. AI-powered pet advisor covering insurance, vets, adoption, dog walking, health questions and more. Free on PetsInMyCity.com">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://petsinmycity.com/lucy/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .lucy-page-shell{font-family:Inter,system-ui,sans-serif;color:var(--charcoal,#1C1917);background:#fff}
+  .lucy-hero{background:linear-gradient(135deg,var(--cream,#FFFBF5) 0%,var(--amber-light,#FEF3C7) 100%);padding:48px 24px;text-align:center;border-bottom:2px solid var(--amber-light,#FEF3C7)}
+  .lucy-hero-avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:4px solid var(--amber,#F59E0B);margin:0 auto 20px;box-shadow:0 8px 32px rgba(245,158,11,0.3)}
+  .lucy-hero-avatar img{width:100%;height:100%;object-fit:cover}
+  .lucy-kicker{font-family:Nunito,sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber,#F59E0B);margin-bottom:8px}
+  .lucy-h1{font-family:Nunito,sans-serif;font-weight:900;font-size:clamp(2rem,4vw,2.6rem);color:var(--charcoal,#1C1917);margin-bottom:12px;line-height:1.1}
+  .lucy-sub{color:var(--gray,#57534E);font-size:1rem;max-width:540px;margin:0 auto 8px;line-height:1.6}
+  .lucy-tag{color:var(--gray,#57534E);font-size:0.85rem}
+  .lucy-chat-section{padding:32px 24px;background:#fff}
+  .lucy-container{max-width:680px;margin:0 auto}
+  #lucy-full-chat{border:2px solid var(--amber-light,#FEF3C7);border-radius:20px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.06);background:#fff}
+  #lucy-full-messages{height:440px;overflow-y:auto;padding:20px;background:#fafafa;display:flex;flex-direction:column;gap:14px}
+  .lucy-msg{max-width:85%;font-size:0.9rem;line-height:1.6;padding:10px 14px;word-wrap:break-word}
+  .lucy-msg.bot{background:#fff;border:1px solid var(--border,#E7E5E4);border-radius:0 14px 14px 14px;color:var(--charcoal,#1C1917);align-self:flex-start}
+  .lucy-msg.user{background:var(--amber,#F59E0B);color:#fff;border-radius:14px 0 14px 14px;align-self:flex-end}
+  .lucy-msg.bot p{margin:0 0 6px}
+  .lucy-msg.bot p:last-child{margin-bottom:0}
+  .lucy-typing{display:inline-flex;gap:4px;align-items:center;padding:4px 0}
+  .lucy-typing span{width:7px;height:7px;background:var(--gray,#57534E);border-radius:50%;animation:typingBounce 1.2s ease-in-out infinite}
+  .lucy-typing span:nth-child(2){animation-delay:0.15s}
+  .lucy-typing span:nth-child(3){animation-delay:0.3s}
+  @keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-6px);opacity:1}}
+  .lucy-link-btn{display:inline-block;background:var(--amber,#F59E0B);color:#fff;padding:8px 16px;border-radius:999px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.85rem;text-decoration:none;margin:6px 4px 0 0}
+  .lucy-link-btn:hover{background:var(--amber-dark,#B45309)}
+  #lucy-topics{padding:12px 16px;border-top:1px solid var(--border,#E7E5E4);background:var(--cream,#FFFBF5);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  #lucy-topics .label{font-size:0.8rem;color:var(--gray,#57534E);font-weight:600}
+  .lucy-quick-btn{background:#fff;border:1.5px solid var(--amber,#F59E0B);color:var(--amber-dark,#B45309);border-radius:999px;padding:6px 12px;font-size:0.8rem;font-family:Nunito,sans-serif;font-weight:600;cursor:pointer;transition:all 0.15s}
+  .lucy-quick-btn:hover{background:var(--amber,#F59E0B);color:#fff}
+  .lucy-input-wrap{padding:14px 16px;border-top:1px solid var(--border,#E7E5E4);background:#fff;display:flex;gap:10px}
+  #lucy-full-input{flex:1;padding:12px 18px;border:1.5px solid var(--border,#E7E5E4);border-radius:999px;font-size:0.95rem;font-family:Inter,system-ui,sans-serif;outline:none}
+  #lucy-full-input:focus{border-color:var(--amber,#F59E0B)}
+  #lucy-full-send{width:48px;height:48px;background:var(--amber,#F59E0B);border:none;border-radius:50%;color:#fff;font-size:1.2rem;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+  #lucy-full-send:disabled{opacity:0.5;cursor:not-allowed}
+  .lucy-trust{text-align:center;font-size:0.8rem;color:var(--gray,#57534E);margin-top:16px}
+  .lucy-help{background:var(--light-gray,#F5F5F4);padding:48px 24px}
+  .lucy-help h2{font-family:Nunito,sans-serif;font-weight:900;font-size:clamp(1.5rem,3vw,1.8rem);color:var(--charcoal,#1C1917);text-align:center;margin-bottom:32px}
+  .lucy-help-grid{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .lucy-help-card{background:#fff;border-radius:12px;padding:20px;text-align:center;border:2px solid var(--border,#E7E5E4)}
+  .lucy-help-card .icon{font-size:2rem;margin-bottom:8px}
+  .lucy-help-card .ttl{font-family:Nunito,sans-serif;font-weight:700;font-size:0.95rem;color:var(--charcoal,#1C1917);margin-bottom:4px}
+  .lucy-help-card p{font-size:0.8rem;color:var(--gray,#57534E)}
+  @media (max-width:768px){.lucy-help-grid{grid-template-columns:repeat(2,1fr)}#lucy-full-messages{height:380px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"PetsInMyCity","url":"https://petsinmycity.com","description":"Free pet resource platform with Lucy AI pet advisor.","sameAs":[]}
+</script>
+</head>
+<body class="lucy-page-shell">
+<div id="site-header"></div>
+
+<section class="lucy-hero">
+  <div class="lucy-hero-avatar"><img src="https://media1.tenor.com/m/9g7cBK_0SJ8AAAAC/hi-hello.gif" alt="Lucy the AI pet advisor"></div>
+  <p class="lucy-kicker">AI Powered Pet Advisor</p>
+  <h1 class="lucy-h1">Hi, I&#39;m Lucy &#x1F43E;</h1>
+  <p class="lucy-sub">I&#39;m PetsInMyCity&#39;s AI pet advisor. Ask me anything about your pet &mdash; insurance, vets, dog walking, adoption, health questions, food, training, anything.</p>
+  <p class="lucy-tag">Powered by Claude AI &mdash; free to use</p>
+</section>
+
+<section class="lucy-chat-section">
+  <div class="lucy-container">
+    <div id="lucy-full-chat">
+      <div id="lucy-full-messages" aria-live="polite"></div>
+      <div id="lucy-topics">
+        <span class="label">Ask about:</span>
+        <button class="lucy-quick-btn" data-q="What pet insurance do you recommend?">&#x1F3E5; Insurance</button>
+        <button class="lucy-quick-btn" data-q="How do I find a vet near me?">&#x1FA7A; Find a Vet</button>
+        <button class="lucy-quick-btn" data-q="How do I find a dog walker?">&#x1F9AE; Dog Walking</button>
+        <button class="lucy-quick-btn" data-q="I want to adopt a pet">&#x1F43E; Adoption</button>
+        <button class="lucy-quick-btn" data-q="What should I feed my dog?">&#x1F963; Nutrition</button>
+        <button class="lucy-quick-btn" data-q="My pet seems sick, what should I do?">&#x1F321;&#xFE0F; Health</button>
+        <button class="lucy-quick-btn" data-q="I just got a new puppy, what do I do first?">&#x1F436; New Pet</button>
+        <button class="lucy-quick-btn" data-q="How do I find a dog boarding place near me?">&#x1F3E1; Boarding</button>
+      </div>
+      <div class="lucy-input-wrap">
+        <input id="lucy-full-input" type="text" placeholder="Ask Lucy anything about your pet..." autocomplete="off">
+        <button id="lucy-full-send" aria-label="Send">&#x27A4;</button>
+      </div>
+    </div>
+    <p class="lucy-trust">&#x1F512; Your conversations are private. Lucy is powered by Claude AI. For medical emergencies always contact your vet directly.</p>
+  </div>
+</section>
+
+<section class="lucy-help">
+  <h2>What can Lucy help with?</h2>
+  <div class="lucy-help-grid">
+    <div class="lucy-help-card"><div class="icon">&#x1F3E5;</div><p class="ttl">Pet Insurance</p><p>Find the right plan for your specific pet</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1FA7A;</div><p class="ttl">Vet Questions</p><p>General health guidance and finding local vets</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1F9AE;</div><p class="ttl">Dog Walking</p><p>Find trusted walkers and sitters near you</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1F43E;</div><p class="ttl">Adoption</p><p>Guidance for new adopters and finding shelters</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1F963;</div><p class="ttl">Nutrition</p><p>Food recommendations for any breed and age</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1F3E1;</div><p class="ttl">Boarding</p><p>Find overnight care and doggy daycare near you</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1F393;</div><p class="ttl">Training</p><p>Tips and finding local trainers near you</p></div>
+    <div class="lucy-help-card"><div class="icon">&#x1F9EC;</div><p class="ttl">Breed Info</p><p>DNA tests and breed specific guidance</p></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>
+(function(){
+  var ENDPOINT='/.netlify/functions/lucy-chat';
+  var conversation=[];var sending=false;var started=false;
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function renderMD(text){
+    var safe=esc(text);var links=[];
+    safe=safe.replace(/\[([^\]]+)\]\(([^\s)]+)\)/g,function(m,l,u){links.push({l:l,u:u});return '\u0000L'+(links.length-1)+'\u0000'});
+    safe=safe.replace(/\n\n/g,'</p><p>').replace(/\n/g,'<br>');
+    safe='<p>'+safe+'</p>';
+    safe=safe.replace(/\u0000L(\d+)\u0000/g,function(m,i){var x=links[Number(i)];var rel=x.u.indexOf('http')===0?' rel="sponsored noopener" target="_blank"':'';return '<a class="lucy-link-btn" href="'+x.u+'"'+rel+' onclick="window.__lucyTrack && window.__lucyTrack(\''+x.u+'\')">'+x.l+' \u2192</a>'});
+    return safe;
+  }
+  window.__lucyTrack=function(u){try{if(window.gtag)window.gtag('event','lucy_link_clicked',{url:u})}catch(e){}};
+  function append(role,text){var box=document.getElementById('lucy-full-messages');var d=document.createElement('div');d.className='lucy-msg '+(role==='user'?'user':'bot');if(role==='user')d.textContent=text;else d.innerHTML=renderMD(text);box.appendChild(d);box.scrollTop=box.scrollHeight}
+  function showTyping(){var box=document.getElementById('lucy-full-messages');var d=document.createElement('div');d.id='lucy-typing';d.className='lucy-msg bot';d.innerHTML='<div class="lucy-typing"><span></span><span></span><span></span></div>';box.appendChild(d);box.scrollTop=box.scrollHeight}
+  function hideTyping(){var t=document.getElementById('lucy-typing');if(t)t.remove()}
+  async function send(text){if(sending)return;text=String(text||'').trim();if(!text)return;sending=true;var btn=document.getElementById('lucy-full-send');if(btn)btn.disabled=true;append('user',text);conversation.push({role:'user',content:text});try{if(window.gtag)window.gtag('event','lucy_message_sent',{message_count:conversation.length})}catch(e){}showTyping();try{var r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:conversation})});var j=await r.json();hideTyping();if(j.reply){conversation.push({role:'assistant',content:j.reply});append('bot',j.reply)}else{append('bot','Sorry, I had trouble responding. '+(j.error?('('+j.error+')'):''))}}catch(e){hideTyping();append('bot','Connection trouble. Try again in a moment.')}sending=false;if(btn)btn.disabled=false}
+  window.setTopic=function(q){var i=document.getElementById('lucy-full-input');i.value=q;send(q);i.value=''};
+  function boot(){
+    try{if(window.gtag)window.gtag('event','lucy_chat_opened',{source:'lucy_page'})}catch(e){}
+    if(!started){started=true;append('bot','Hi! \u{1F43E} I\u2019m Lucy, your AI pet advisor. Ask me anything \u2014 insurance, vets, dog walking, adoption, health questions, food recommendations \u2014 I\u2019m here to help! Pick a topic below or type your question.');}
+    var input=document.getElementById('lucy-full-input');var sendBtn=document.getElementById('lucy-full-send');
+    if(sendBtn)sendBtn.addEventListener('click',function(){var v=input.value;input.value='';send(v)});
+    if(input)input.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();var v=input.value;input.value='';send(v)}});
+    document.querySelectorAll('.lucy-quick-btn[data-q]').forEach(function(b){b.addEventListener('click',function(){send(b.getAttribute('data-q'))})});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+<script src="/assets/script.js"></script>
+<script src="/assets/lucy.js" defer></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S82CVPTRCE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S82CVPTRCE');
+</script>
+</body>
+</html>
