@@ -184,3 +184,17 @@
     gap: 10px !important;
   }
 }
+
+
+/* Mobile hamburger nav */
+@media (max-width: 768px) {
+  #pimc-hamburger {
+    display: flex !important;
+  }
+  .pimc-nav-links {
+    display: none !important;
+  }
+  #pimc-mobile-nav a:hover {
+    color: var(--amber) !important;
+  }
+}
