@@ -49,8 +49,8 @@ const SYSTEM_PROMPT = [
   "- Any other pet topic"
 ].join('\n');
 
-const MODEL = process.env.LUCY_MODEL || 'claude-sonnet-4-20250514';
-const MAX_TOKENS = 1024;
+const MODEL = process.env.LUCY_MODEL || 'claude-sonnet-4-5';
+const MAX_TOKENS = 1000;
 
 exports.handler = async function (event) {
   const cors = {
