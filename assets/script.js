@@ -11,6 +11,7 @@
       '<div class="pimc-nav-links">'+
         '<a href="/#insurance">Insurance</a>'+
         '<a href="/adoption/">Adoption</a>'+
+        '<a href="/dog-care/">Dog Care</a>'+
         '<a href="/find-a-vet/">Find a Vet</a>'+
         '<a href="/#cities">Cities</a>'+
       '</div>'+
