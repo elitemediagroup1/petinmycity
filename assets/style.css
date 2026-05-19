@@ -29,3 +29,158 @@
 .pimc-footer{background:var(--cream);padding:40px 24px;color:var(--charcoal);font-size:0.85rem;border-top:1px solid var(--amber-light)}.pimc-footer .container{max-width:1120px;margin:0 auto}.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}.footer-link{color:var(--charcoal);transition:color 0.2s;font-size:0.875rem;opacity:0.75}.footer-link:hover{color:var(--amber);opacity:1}.footer-bottom{border-top:1px solid var(--amber-light);margin-top:28px;padding-top:20px;font-size:0.8rem;color:var(--gray)}.footer-bottom p{margin:0}
 
 @media (max-width:768px){.services-grid{grid-template-columns:repeat(2,1fr)}.insurance-grid{grid-template-columns:1fr}.cities-grid{grid-template-columns:1fr}.new-pet-cards{grid-template-columns:1fr}.pimc-hero h1{font-size:2rem}.pimc-nav-links{display:none}.adoption-inner{flex-direction:column;text-align:center}.cross-link-bar{flex-direction:column;text-align:center}.footer-inner{flex-direction:column;gap:24px}h2{font-size:1.5rem}.hero-search{flex-direction:column;border-radius:var(--radius);padding:12px}.hero-search button{width:100%}}
+
+/* ================================
+   MOBILE FIXES - max-width 768px
+   ================================ */
+@media (max-width: 768px) {
+  /* Fix all split grid layouts - stack vertically on mobile */
+  section > div[style*="grid-template-columns:1fr 1fr"],
+  section[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1fr"] {
+    display: block !important;
+  }
+  /* Fix split section images - full width on mobile */
+  section > div[style*="grid-template-columns:1fr 1fr"] > div:first-child,
+  div[style*="grid-template-columns:1fr 1fr"] > div:first-child {
+    width: 100% !important;
+    height: 260px !important;
+  }
+  /* Fix hero H1 size */
+  .pimc-hero h1 {
+    font-size: 2rem !important;
+    padding: 0 8px !important;
+  }
+  /* Fix hero section height */
+  section[style*="height:520px"],
+  section[style*="height:540px"],
+  section[style*="height:500px"],
+  section[style*="height:400px"],
+  section[style*="height:420px"],
+  section[style*="height:320px"] {
+    height: auto !important;
+    min-height: 320px !important;
+  }
+  /* Fix stats bar wrapping */
+  div[style*="display:flex"][style*="gap:64px"] {
+    gap: 24px !important;
+    padding: 20px 16px !important;
+  }
+  /* Fix insurance grid - 1 column */
+  .insurance-grid,
+  div[style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix services grid - 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  /* Fix provider cards grid */
+  div[style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix 2 column grids */
+  div[style*="grid-template-columns:repeat(2,1fr)"],
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix new pet cards grid */
+  div[style*="grid-template-columns:repeat(3,1fr)"][style*="gap:20px"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix adoption inner layout */
+  .adoption-inner {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  /* Fix cross-link bar */
+  .cross-link-bar {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 12px !important;
+  }
+  /* Fix nav - hide links show CTA */
+  .pimc-nav-links {
+    display: none !important;
+  }
+  /* Fix container padding */
+  .container {
+    padding: 0 16px !important;
+  }
+  /* Fix split section text padding */
+  div[style*="padding:48px 40px"],
+  div[style*="padding:56px 48px"] {
+    padding: 28px 20px !important;
+  }
+  /* Fix hero photo strip height */
+  div[style*="height:340px"] {
+    height: 220px !important;
+  }
+  /* Fix floated ZIP search card on find-a-vet page */
+  div[style*="margin:-48px auto 0"] {
+    margin: -32px 16px 0 !important;
+  }
+  /* Fix footer inner layout */
+  .footer-inner {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  /* Fix checklist cards on adoption page split layout */
+  div[style*="grid-template-columns:1fr 1fr"][style*="align-items:center"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Fix about page split */
+  section[style*="grid-template-columns:1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  section[style*="grid-template-columns:1fr 1fr"] > div {
+    width: 100% !important;
+  }
+  section[style*="grid-template-columns:1fr 1fr"] img {
+    height: 240px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
+  /* Fix charcoal stats section on pet-insurance page */
+  div[style*="justify-content:center"][style*="gap:64px"] {
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+  /* Fix cost stats grid on find-a-vet page */
+  div[style*="grid-template-columns:repeat(3,1fr)"][style*="gap:20px"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  /* Fix hero text overlay positioning on photo heroes */
+  section[style*="position:relative"] > div[style*="position:absolute"][style*="padding:48px"] {
+    padding: 24px 16px !important;
+  }
+  /* Fix hero H1 on photo pages */
+  section[style*="position:relative"] h1 {
+    font-size: 1.9rem !important;
+    margin-bottom: 8px !important;
+  }
+  /* Fix hero subtitle on photo pages */
+  section[style*="position:relative"] p[style*="font-size:1.05rem"],
+  section[style*="position:relative"] p[style*="font-size:1rem"] {
+    font-size: 0.9rem !important;
+    margin-bottom: 16px !important;
+  }
+  /* Fix hero CTA button on photo pages */
+  section[style*="position:relative"] button {
+    padding: 12px 24px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 390px) {
+  .pimc-hero h1 {
+    font-size: 1.7rem !important;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+}
