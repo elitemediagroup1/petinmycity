@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pet Services in Denver, CO &mdash; Insurance, Vets, Dog Walking &amp; More | PetsInMyCity</title>
+<meta name="description" content="Find pet insurance quotes, dog walkers, boarding, vets, and adoption resources in Denver, CO. Free pet resources for Denver pet owners.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://petsinmycity.com/cities/denver/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+:root{--amber:#F59E0B;--coral:#FB7185;--sage:#86EFAC;--cream:#FFFBF5;--charcoal:#1C1917;--ink:#1C1917;--muted:#57534E;--line:#E7E5E4;--coral-light:#FFE4E6;--amber-light:#FEF3C7;--sage-light:#DCFCE7;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;color:var(--charcoal);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:900;line-height:1.15;letter-spacing:-0.02em;color:var(--charcoal)}
+h1{font-size:clamp(2rem,5vw,3.5rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.5rem);margin-bottom:0.5rem}
+h3{font-size:1.25rem;font-weight:800}
+a{color:inherit}
+img{max-width:100%;display:block;height:auto}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+.hero{position:relative;height:520px;overflow:hidden;background:#1C1917}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55}
+.hero-overlay{position:absolute;left:0;right:0;bottom:0;padding:2.5rem 0 3rem;background:linear-gradient(to top,rgba(28,25,23,0.95),rgba(28,25,23,0))}
+.hero-overlay h1{color:#fff}
+.hero-overlay p{color:#E7E5E4;font-size:1.125rem;max-width:680px;margin-top:0.75rem}
+.city-pill{display:inline-block;background:var(--amber);color:#1C1917;padding:0.4rem 1rem;border-radius:999px;font-weight:800;font-size:0.95rem;margin-bottom:1rem;font-family:'Nunito',sans-serif}
+.stats-bar{background:var(--charcoal);color:#fff;padding:2.5rem 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center}
+.stat-num{font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.8rem,3.5vw,2.75rem);color:var(--amber);line-height:1}
+.stat-label{margin-top:0.5rem;color:#D6D3D1;font-size:0.95rem}
+section{padding:4rem 0}
+.s-cream{background:var(--cream)}
+.s-white{background:#fff}
+.s-coral{background:var(--coral-light)}
+.s-gray{background:#F5F5F4}
+.s-sage{background:var(--sage-light)}
+.s-amber{background:var(--amber-light)}
+.lede{color:var(--muted);font-size:1.1rem;max-width:760px;margin:0.5rem 0 2rem}
+.card-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2rem}
+.card-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,0.04)}
+.card.featured{background:var(--amber);border-color:var(--amber);color:#1C1917;box-shadow:0 8px 24px rgba(245,158,11,0.25)}
+.card.featured .pill{background:#1C1917;color:var(--amber)}
+.card h3{margin-bottom:0.5rem}
+.card p{color:var(--muted);margin-bottom:1rem;font-size:0.95rem}
+.card.featured p{color:#3F2E04}
+.pill{display:inline-block;background:var(--sage-light);color:#166534;font-size:0.75rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.75rem;font-family:'Nunito',sans-serif}
+.btn{display:inline-block;background:var(--charcoal);color:#fff;padding:0.85rem 1.4rem;border-radius:999px;text-decoration:none;font-weight:700;font-family:'Nunito',sans-serif;transition:transform 0.15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-amber{background:var(--amber);color:#1C1917}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-lg{padding:1.1rem 2rem;font-size:1.05rem}
+.card-photo{margin:-1.5rem -1.5rem 1.25rem;border-radius:16px 16px 0 0;overflow:hidden;aspect-ratio:16/10;background:#E7E5E4}
+.card-photo img{width:100%;height:100%;object-fit:cover}
+.checklist{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:2rem}
+.checklist li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.25rem;display:flex;gap:0.85rem;align-items:flex-start}
+.checklist .num{background:var(--coral);color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-family:'Nunito',sans-serif;flex:none}
+.checklist h4{font-family:'Nunito',sans-serif;font-weight:800;font-size:1rem;margin-bottom:0.25rem}
+.checklist p{font-size:0.9rem;color:var(--muted);margin-bottom:0.5rem}
+.checklist a{color:var(--amber);font-weight:700;text-decoration:none;font-size:0.9rem}
+.checklist a:hover{text-decoration:underline}
+.neighborhoods{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.nbh-pill{background:#fff;border:1px solid var(--line);padding:0.55rem 1rem;border-radius:999px;font-size:0.9rem;color:var(--charcoal)}
+.nbh-pill .zip{color:var(--muted);font-weight:600;margin-left:0.4rem;font-size:0.8rem}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;margin-top:2rem}
+.split img{border-radius:18px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.faq-item{border-bottom:1px solid var(--line);padding:1.5rem 0}
+.faq-item:last-child{border-bottom:none}
+.faq-item h3{font-size:1.1rem;margin-bottom:0.5rem;color:var(--charcoal)}
+.faq-item p{color:var(--muted)}
+.csh-bar{background:var(--sage);color:#1C1917;padding:1.5rem 0;text-align:center}
+.csh-bar a{color:#1C1917;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.close-cta{text-align:center;padding:5rem 0}
+.close-cta p{max-width:620px;margin:1rem auto 2rem;color:var(--muted);font-size:1.05rem}
+@media (max-width:768px){
+.hero{height:440px}
+.stats-grid{grid-template-columns:repeat(2,1fr)}
+.card-grid-3{grid-template-columns:1fr}
+.card-grid-2{grid-template-columns:1fr}
+.split{grid-template-columns:1fr;gap:1.5rem}
+section{padding:3rem 0}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PetsInMyCity Denver","url":"https://petsinmycity.com/cities/denver/","areaServed":{"@type":"City","name":"Denver, CO"},"description":"Find pet insurance quotes, dog walkers, boarding, vets, and adoption resources in Denver, CO. Free pet resources for Denver pet owners."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does pet insurance cost in Denver?","acceptedAnswer":{"@type":"Answer","text":"Pet insurance in Denver typically costs $40–$60 per month for dogs and $18–$38 per month for cats. Colorado's active outdoor lifestyle means dogs are often more active and exposed to more risks — making coverage especially worthwhile. Use PetInsurer.com to compare quotes for your specific Denver pet."}},{"@type":"Question","name":"Do Denver dogs need special insurance coverage?","acceptedAnswer":{"@type":"Answer","text":"Denver's high altitude and outdoor culture means dogs often hike, trail run, and swim more than dogs in most cities. Active dogs have higher injury risk — torn ligaments, paw injuries, and altitude-related issues are more common than in sedentary urban environments. Comprehensive accident and illness coverage is especially important for Denver trail dogs."}},{"@type":"Question","name":"What is the Denver Dumb Friends League?","acceptedAnswer":{"@type":"Answer","text":"The Denver Dumb Friends League is one of the largest and most respected humane societies in the Rocky Mountain region. Founded in 1910 they provide sheltering, adoption, and animal welfare services across the Denver metro. They also operate the Harmony Equine Center for large animal rescue."}},{"@type":"Question","name":"Which pet insurance is best for active Denver dogs?","acceptedAnswer":{"@type":"Answer","text":"For active trail dogs in Denver Trupanion is a strong choice — lifetime coverage with no payout limits means serious injuries are fully covered. Pets Best is another solid option with competitive rates for Colorado. Use PetInsurer.com to compare both for your specific dog's age and breed."}},{"@type":"Question","name":"How do I find a dog walker in Denver?","acceptedAnswer":{"@type":"Answer","text":"WagWalking has strong coverage across the Denver metro — Capitol Hill, Highlands, Washington Park, and RiNo are all well covered. Rover is the best option for overnight boarding and sitting across Denver and the suburbs. Both platforms background check all service providers."}}]}</script>
+</head>
+<body>
+<div class="site-header"></div>
+
+<section class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1400&auto=format&fit=crop&q=80" alt="Denver pet lifestyle">
+  <div class="hero-overlay">
+    <div class="wrap">
+      <span class="city-pill">🏔️ Denver, CO</span>
+      <h1>Pet Services in Denver, CO</h1>
+      <p>Mile High City dogs need mile high coverage &mdash; find insurance, walkers, boarding, vets, and adoption resources in Denver.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar">
+  <div class="wrap">
+    <div class="stats-grid">
+        <div><div class="stat-num">Top 3</div><div class="stat-label">Most dog-friendly city in the US</div></div>
+        <div><div class="stat-num">$47/mo</div><div class="stat-label">Avg pet insurance in Colorado</div></div>
+        <div><div class="stat-num">85+</div><div class="stat-label">Off-leash dog parks in Denver metro</div></div>
+        <div><div class="stat-num">65%</div><div class="stat-label">Colorado pet ownership rate</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s-cream">
+  <div class="wrap">
+    <h2>Compare Pet Insurance in Denver</h2>
+    <p class="lede">Colorado pet insurance averages $47 per month for dogs. High altitude hiking means active dogs &mdash; make sure yours is covered.</p>
+    <div class="card-grid-3">
+      <div class="card featured">
+        <span class="pill">Featured</span>
+        <h3>PetInsurer.com</h3>
+        <p>Denver pet owners can compare plans from all major providers. Find the right coverage for your Colorado pet &mdash; whether they&#39;re a trail dog or a city dog &mdash; in 60 seconds.</p>
+        <a class="btn btn-coral" href="https://www.petinsurer.com/" rel="sponsored noopener" target="_blank">Compare Denver Plans Free &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Trupanion</h3>
+        <p>Lifetime coverage with no payout limits. Pays your Denver vet directly. Ideal for active Colorado dogs.</p>
+        <a class="btn" href="https://www.trupanion.com/" rel="sponsored noopener" target="_blank">Get a Quote &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Fetch Pet Insurance</h3>
+        <p>Preferred by Denver area shelters. Great for rescue dogs from the Denver Dumb Friends League.</p>
+        <a class="btn" href="https://www.fetchpet.com/" rel="sponsored noopener" target="_blank">Get a Quote &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-white">
+  <div class="wrap">
+    <h2>Dog Walking and Boarding in Denver</h2>
+    <p class="lede">Denver&#39;s outdoor culture means dogs are part of daily life. Find trusted local walkers and sitters in your neighborhood.</p>
+    <div class="card-grid-2">
+      <div class="card featured">
+        <div class="card-photo"><img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=800&auto=format&fit=crop&q=80" alt="Dog being walked on leash"></div>
+        <span class="pill">Featured</span>
+        <h3>WagWalking</h3>
+        <p>Find GPS-tracked dog walkers in Capitol Hill, Highlands, Washington Park, RiNo, and across the Denver metro. Daily walks available.</p>
+        <a class="btn btn-coral" href="https://www.wagwalking.com/" rel="sponsored noopener" target="_blank">Find Denver Dog Walkers &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="card-photo"><img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=800&auto=format&fit=crop&q=80" alt="Dog at a sitter's home"></div>
+        <h3>Rover</h3>
+        <p>The largest network of Denver dog sitters and boarders. Overnight care and doggy daycare across Denver, Aurora, Lakewood, and the suburbs.</p>
+        <a class="btn" href="https://www.rover.com/" rel="sponsored noopener" target="_blank">Find Denver Boarding &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-coral">
+  <div class="wrap">
+    <h2>Just adopted in Denver?</h2>
+    <p class="lede">The Denver Dumb Friends League is one of the largest and most respected humane societies in the Rocky Mountain region. Here&#39;s what to do first week.</p>
+    <ul class="checklist">
+      <li><div class="num">1</div><div><h4>Get pet insurance</h4><p>Lock in coverage before pre-existing conditions surface.</p><a href="https://www.petinsurer.com/" rel="sponsored noopener" target="_blank">Compare on PetInsurer &rarr;</a></div></li>
+      <li><div class="num">2</div><div><h4>Book a vet checkup</h4><p>Schedule a wellness exam in the first two weeks.</p><a href="/find-a-vet/">Find a vet near you &rarr;</a></div></li>
+      <li><div class="num">3</div><div><h4>Run a DNA test</h4><p>Embark identifies breed mix and 250+ health markers.</p><a href="https://embarkvet.com/" rel="sponsored noopener" target="_blank">Order Embark DNA &rarr;</a></div></li>
+      <li><div class="num">4</div><div><h4>Set up food delivery</h4><p>Chewy auto-ship gets food and supplies to your door.</p><a href="https://www.chewy.com/" rel="sponsored noopener" target="_blank">Shop Chewy &rarr;</a></div></li>
+      <li><div class="num">5</div><div><h4>Try BarkBox</h4><p>Monthly toys and treats sized to your dog &mdash; a fun welcome.</p><a href="https://www.barkbox.com/" rel="sponsored noopener" target="_blank">Get BarkBox &rarr;</a></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="s-gray">
+  <div class="wrap">
+    <h2>Denver Neighborhoods We Serve</h2>
+    <p class="lede">Local walkers, sitters, vets, and adoption resources across Denver and the surrounding metro.</p>
+    <div class="neighborhoods">
+        <span class="nbh-pill">Capitol Hill<span class="zip">80203</span></span>
+        <span class="nbh-pill">Highlands<span class="zip">80211</span></span>
+        <span class="nbh-pill">Washington Park<span class="zip">80209</span></span>
+        <span class="nbh-pill">RiNo<span class="zip">80205</span></span>
+        <span class="nbh-pill">Baker<span class="zip">80219</span></span>
+        <span class="nbh-pill">Five Points<span class="zip">80205</span></span>
+        <span class="nbh-pill">Congress Park<span class="zip">80220</span></span>
+        <span class="nbh-pill">Stapleton<span class="zip">80238</span></span>
+        <span class="nbh-pill">Lakewood<span class="zip">80214</span></span>
+        <span class="nbh-pill">Aurora<span class="zip">80010</span></span>
+        <span class="nbh-pill">Centennial<span class="zip">80122</span></span>
+        <span class="nbh-pill">Littleton<span class="zip">80120</span></span>
+        <span class="nbh-pill">Englewood<span class="zip">80110</span></span>
+        <span class="nbh-pill">Arvada<span class="zip">80002</span></span>
+        <span class="nbh-pill">Westminster<span class="zip">80031</span></span>
+        <span class="nbh-pill">Thornton<span class="zip">80229</span></span>
+        <span class="nbh-pill">Parker<span class="zip">80134</span></span>
+        <span class="nbh-pill">Castle Rock<span class="zip">80104</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="s-white">
+  <div class="wrap">
+    <h2>Adopt a Pet in Denver</h2>
+    <div class="split">
+      <img src="https://images.unsplash.com/photo-1560743641-3914f2c45636?w=800&auto=format&fit=crop&q=80" alt="Adoptable dog">
+      <div>
+        <p style="color:var(--muted);font-size:1.05rem;margin-bottom:1.5rem">The Denver Dumb Friends League is one of the largest humane societies in the Rocky Mountain region serving the Denver metro for over 100 years. Maxfund Animal Adoption Center is Denver&#39;s only no-kill shelter.</p>
+        <a class="btn btn-amber btn-lg" href="https://www.petfinder.com/search/?location=Denver+CO" rel="sponsored noopener" target="_blank">Find Denver Pets on Petfinder &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-cream">
+  <div class="wrap">
+    <h2>Pet Insurance Questions from Denver Pet Owners</h2>
+    <div style="margin-top:1.5rem;max-width:880px">
+      <div class="faq-item">
+        <h3>How much does pet insurance cost in Denver?</h3>
+        <p>Pet insurance in Denver typically costs $40&ndash;$60 per month for dogs and $18&ndash;$38 per month for cats. Colorado&#39;s active outdoor lifestyle means dogs are often more active and exposed to more risks &mdash; making coverage especially worthwhile. Use PetInsurer.com to compare quotes for your specific Denver pet.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do Denver dogs need special insurance coverage?</h3>
+        <p>Denver&#39;s high altitude and outdoor culture means dogs often hike, trail run, and swim more than dogs in most cities. Active dogs have higher injury risk &mdash; torn ligaments, paw injuries, and altitude-related issues are more common than in sedentary urban environments. Comprehensive accident and illness coverage is especially important for Denver trail dogs.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What is the Denver Dumb Friends League?</h3>
+        <p>The Denver Dumb Friends League is one of the largest and most respected humane societies in the Rocky Mountain region. Founded in 1910 they provide sheltering, adoption, and animal welfare services across the Denver metro. They also operate the Harmony Equine Center for large animal rescue.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Which pet insurance is best for active Denver dogs?</h3>
+        <p>For active trail dogs in Denver Trupanion is a strong choice &mdash; lifetime coverage with no payout limits means serious injuries are fully covered. Pets Best is another solid option with competitive rates for Colorado. Use PetInsurer.com to compare both for your specific dog&#39;s age and breed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I find a dog walker in Denver?</h3>
+        <p>WagWalking has strong coverage across the Denver metro &mdash; Capitol Hill, Highlands, Washington Park, and RiNo are all well covered. Rover is the best option for overnight boarding and sitting across Denver and the suburbs. Both platforms background check all service providers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="csh-bar">
+  <div class="wrap">
+    <p>Denver homeowner? Find licensed pest control specialists &mdash; ants, spiders, rodents, and more. <a href="https://consumersupporthelp.com/pest-control/colorado/denver/" rel="noopener" target="_blank">Find a local pest specialist &rarr;</a></p>
+  </div>
+</div>
+
+<section class="s-amber close-cta">
+  <div class="wrap">
+    <h2>Ready to protect your Denver pet?</h2>
+    <p>Active Colorado dogs deserve the best coverage. Compare plans from top providers in 60 seconds &mdash; free, no commitment.</p>
+    <a class="btn btn-coral btn-lg" href="https://www.petinsurer.com/" rel="sponsored noopener" target="_blank">Compare Denver Pet Insurance &rarr;</a>
+  </div>
+</section>
+
+<div class="site-footer"></div>
+
+<script src="/assets/script.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S82CVPTRCE"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-S82CVPTRCE');
+</script>
+</body>
+</html>
