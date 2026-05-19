@@ -1,27 +1,50 @@
+const https = require('https');
+
 exports.handler = async function(event) {
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' };
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed'
+    };
   }
-  try {
-    const payload = JSON.parse(event.body);
-    const response = await fetch('https://api.indexnow.org/indexnow', {
+
+  return new Promise((resolve) => {
+    const payload = event.body;
+
+    const options = {
+      hostname: 'api.indexnow.org',
+      path: '/indexnow',
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json; charset=utf-8'
-      },
-      body: JSON.stringify(payload)
+        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Length': Buffer.byteLength(payload)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+      res.on('end', () => {
+        resolve({
+          statusCode: res.statusCode,
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          },
+          body: data || 'Submitted successfully'
+        });
+      });
     });
-    return {
-      statusCode: response.status,
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
-      body: await response.text()
-    };
-  } catch (err) {
-    return {
-      statusCode: 500,
-      body: err.message
-    };
-  }
+
+    req.on('error', (err) => {
+      resolve({
+        statusCode: 500,
+        body: err.message
+      });
+    });
+
+    req.write(payload);
+    req.end();
+  });
 };
