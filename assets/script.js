@@ -3,23 +3,27 @@
 (function(){
   function buildHeader(){
     return `<nav class="pimc-nav">
-  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
-    <a href="/" style="display:flex;align-items:center;text-decoration:none">
-      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:512px;width:auto;display:block">
+  <div class="pimc-logo-row">
+    <a href="/" class="pimc-logo-link" style="display:inline-flex;align-items:center;text-decoration:none">
+      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:128px;width:auto;display:block">
     </a>
-    <div class="pimc-nav-links" id="pimc-nav-links">
-      <a href="/pet-insurance/">Insurance</a>
-      <a href="/adoption/">Adoption</a>
-      <a href="/dog-care/">Dog Care</a>
-      <a href="/find-a-vet/">Find a Vet</a>
-      <a href="/lucy/" style="color:var(--amber);font-weight:700">&#10024; Lucy AI</a>
-      <a href="/#cities">Cities</a>
+  </div>
+  <div class="pimc-nav-row">
+    <div class="container" style="display:flex;align-items:center;justify-content:center;width:100%;position:relative">
+      <div class="pimc-nav-links" id="pimc-nav-links">
+        <a href="/pet-insurance/">Insurance</a>
+        <a href="/adoption/">Adoption</a>
+        <a href="/dog-care/">Dog Care</a>
+        <a href="/find-a-vet/">Find a Vet</a>
+        <a href="/lucy/" style="color:var(--amber);font-weight:700">&#10024; Lucy AI</a>
+        <a href="/#cities">Cities</a>
+      </div>
+      <button id="pimc-hamburger" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;align-items:center;justify-content:center;position:absolute;right:16px;top:50%;transform:translateY(-50%)">
+        <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
+        <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
+        <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
+      </button>
     </div>
-    <button id="pimc-hamburger" onclick="toggleMobileNav()" aria-label="Open menu" aria-expanded="false" style="display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;align-items:center;justify-content:center">
-      <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
-      <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
-      <span style="display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s"></span>
-    </button>
   </div>
   <div id="pimc-mobile-nav" style="display:none;background:white;border-top:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:0">
     <a href="/pet-insurance/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#127973;&#65039; Insurance</a>
