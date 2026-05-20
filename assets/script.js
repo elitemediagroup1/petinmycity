@@ -5,7 +5,7 @@
     return `<nav class="pimc-nav">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
     <a href="/" style="display:flex;align-items:center;text-decoration:none">
-      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:128px;width:auto;display:block">
+      <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:512px;width:auto;display:block">
     </a>
     <div class="pimc-nav-links" id="pimc-nav-links">
       <a href="/pet-insurance/">Insurance</a>
