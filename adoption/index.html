@@ -74,6 +74,36 @@
   </div>
 </section>
 
+<!-- Pet List Widget Section - Start -->
+<section style="padding:48px 24px;background:var(--coral-light);border-top:2px solid #fecdd3">
+  <div class="container">
+    <p style="font-family:Nunito;font-weight:700;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--coral-dark);margin-bottom:8px;text-align:center">
+      🐾 Live adoptable pets
+    </p>
+    <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);text-align:center;margin-bottom:8px">
+      Pets Available for Adoption Near You
+    </h2>
+    <p style="color:var(--gray);text-align:center;margin-bottom:28px;font-size:0.95rem">
+      Updated daily from shelters and rescues across the country. Powered by Petfinder.
+    </p>
+    <!-- Pet List Widget - Start -->
+    <script src="https://www.petfinder.com/pet-scroller.bundle.js"></script>
+    <pet-scroller
+      s3Url="https://dbw3zep4prcju.cloudfront.net/"
+      apiBase="https://psl.petfinder.com/graphql"
+      organization=[]
+      status="adoptable"
+      petfinderUrl="https://www.petfinder.com/"
+      hideBreed="true"
+      limit="24"
+      petListTitle="">
+    </pet-scroller>
+    <!-- Pet List Widget - End -->
+  </div>
+</section>
+<!-- Pet List Widget Section - End -->
+
+
 <section style="padding:56px 24px;background:white">
   <div class="container" style="max-width:1120px;margin:0 auto">
     <h2 style="font-family:Nunito;font-weight:900;font-size:1.8rem;color:var(--charcoal);text-align:center;margin-bottom:8px">Your first week checklist</h2>
