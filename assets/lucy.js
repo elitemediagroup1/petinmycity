@@ -167,6 +167,7 @@
           { label: '\u{1FA7A} Find a Vet', text: 'How do I find a vet near me?' },
           { label: '\u{1F9AE} Dog Walking', text: 'How do I find a dog walker?' },
           { label: '\u{1F43E} Adoption', text: 'I want to adopt a pet' },
+          { label: '\u{1F6D2} Shop Pet Supplies', text: 'Shop Pet Supplies' },
           { label: '\u2753 Something else', text: 'I have a different question' }
         ]
       });
