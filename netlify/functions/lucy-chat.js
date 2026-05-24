@@ -123,7 +123,14 @@ RESPONSE FORMAT:
 - Keep it conversational not listy
 - Under 200 words per response
 - If you need their location to help ask for ZIP code specifically
-- Remember everything they told you about their pet in this conversation`;
+- Remember everything they told you about their pet in this conversation
+
+AMAZON AFFILIATE LINKS:
+When a user asks about pet supplies, pet food, toys, grooming products, leashes, carriers, beds, or any physical pet product recommend shopping on Amazon and include this link:
+[Shop Pet Supplies on Amazon](https://www.amazon.com/b?node=2619533011&linkCode=ll2&tag=elitemediag00-20&linkId=1ce76b3f94982ccbe37e07bab49028f8&language=en_US&ref_=as_li_ss_tl)
+Use natural language like: "You can find a great selection of [product type] on Amazon \u2014" then include the link.
+Only include the link when it is genuinely relevant to what the user is asking about. Do not force it into every response.
+`;
 
 const MODEL = process.env.LUCY_MODEL || 'claude-sonnet-4-5';
 const MAX_TOKENS = 1000;
