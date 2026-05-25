@@ -15,6 +15,7 @@
         <a href="/adoption/">Adoption</a>
         <a href="/dog-care/">Dog Care</a>
         <a href="/find-a-vet/">Find a Vet</a>
+        <a href="/tools/">Tools</a>
         <a href="/lucy/" style="color:var(--amber);font-weight:700">&#10024; Lucy AI</a>
         <a href="/#cities">Cities</a>
       </div>
@@ -30,6 +31,7 @@
     <a href="/adoption/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#128062; Adoption</a>
     <a href="/dog-care/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129436; Dog Care</a>
     <a href="/find-a-vet/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129658; Find a Vet</a>
+    <a href="/tools/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#128736;&#65039; Tools</a>
     <a href="/lucy/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:700;font-size:1rem;color:var(--amber);text-decoration:none">&#10024; Lucy AI</a>
     <a href="/#cities" style="display:block;padding:14px 0;font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#127961;&#65039; Cities</a>
   </div>
