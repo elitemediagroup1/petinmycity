@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pet Calorie Calculator &mdash; How Much Should I Feed My Pet? | PetsInMyCity</title>
+<meta name="description" content="Calculate exactly how many calories your dog or cat needs daily. Free pet calorie calculator based on weight, age, and activity level.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://petsinmycity.com/tools/calorie-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PetsInMyCity">
+<meta property="og:url" content="https://petsinmycity.com/tools/calorie-calculator/">
+<meta property="og:title" content="Pet Calorie Calculator — How Much Should I Feed My Pet?">
+<meta property="og:description" content="Calculate exactly how many calories your dog or cat needs daily. Free pet calorie calculator based on weight, age, and activity level.">
+<meta property="og:image" content="https://petsinmycity.com/assets/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@petsinmycity">
+<meta name="twitter:title" content="Pet Calorie Calculator — How Much Should I Feed My Pet?">
+<meta name="twitter:description" content="Calculate exactly how many calories your dog or cat needs daily. Free pet calorie calculator based on weight, age, and activity level.">
+<meta name="twitter:image" content="https://petsinmycity.com/assets/logo.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<meta name="theme-color" content="#F59E0B">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/script.js" defer></script>
+<script src="/assets/lucy.js" defer></script>
+<style>
+.tool-card{background:#fff;border:1px solid #f0e5ce;border-radius:14px;padding:28px;box-shadow:0 4px 20px rgba(146,64,14,0.06)}
+.tool-label{display:block;font-family:Nunito,sans-serif;font-weight:700;font-size:0.92rem;color:#1a1a1a;margin:14px 0 8px 0}
+.tool-input,.tool-textarea,.tool-select{width:100%;font-family:Inter,sans-serif;font-size:1rem;padding:12px 14px;border:1.5px solid #e5d9bd;border-radius:8px;background:#fff;color:#1a1a1a;box-sizing:border-box}
+.tool-textarea{min-height:96px;resize:vertical}
+.tool-toggle-group{display:flex;gap:8px;flex-wrap:wrap}
+.tool-toggle{flex:1;min-width:90px;padding:12px 14px;background:#FFF8E7;border:1.5px solid #e5d9bd;color:#1a1a1a;border-radius:8px;cursor:pointer;font-family:Nunito,sans-serif;font-weight:700;font-size:0.95rem;text-align:center}
+.tool-toggle.active{background:#F59E0B;color:#fff;border-color:#F59E0B}
+.tool-check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.tool-check{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#FFF8E7;border:1.5px solid #e5d9bd;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;font-size:0.92rem}
+.tool-check input{margin:0}
+.tool-submit{display:inline-block;background:#F59E0B;color:#fff;font-family:Nunito,sans-serif;font-weight:800;font-size:1.05rem;padding:14px 28px;border:none;border-radius:10px;cursor:pointer;margin-top:18px;width:100%}
+.tool-submit:hover{background:#92400E}
+.tool-submit.danger{background:#dc2626}
+.tool-submit.danger:hover{background:#991b1b}
+.tool-result-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:24px;font-family:Inter,sans-serif;font-size:1rem;line-height:1.6;color:#222}
+.tool-result-card.safe{background:#ecfdf5;border-color:#a7f3d0}
+.tool-result-card.danger{background:#fef2f2;border-color:#fca5a5}
+.tool-result-card.caution{background:#fffbeb;border-color:#fcd34d}
+.tool-result-card h3{font-family:Nunito,sans-serif;font-weight:800;margin:0 0 12px 0;font-size:1.2rem}
+.tool-disclaimer{background:#FFF8E7;border:1px solid #f0e5ce;border-radius:10px;padding:14px 18px;font-family:Inter,sans-serif;font-size:0.88rem;color:#6b5a36;margin-top:20px;line-height:1.5}
+.warn-bar{background:#fef2f2;border:2px solid #dc2626;color:#7f1d1d;padding:14px 18px;border-radius:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:20px;line-height:1.5}
+.urgent-banner{background:#fffbeb;border:2px solid #F59E0B;color:#7c2d12;padding:14px 18px;border-radius:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:20px;line-height:1.5}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://petsinmycity.com/"},
+    {"@type":"ListItem","position":2,"name":"Tools","item":"https://petsinmycity.com/tools/"},
+    {"@type":"ListItem","position":3,"name":"Pet Calorie Calculator","item":"https://petsinmycity.com/tools/calorie-calculator/"}
+  ]
+}
+</script>
+</head>
+<body>
+<div id="site-header"></div>
+
+<section style="background:linear-gradient(135deg,#92400E 0%,#F59E0B 100%);padding:48px 0;color:#fff">
+  <div class="container">
+    <nav style="font-family:Nunito,sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.9);margin-bottom:16px">
+      <a href="/" style="color:#fff;text-decoration:none">Home</a> &rsaquo;
+      <a href="/tools/" style="color:#fff;text-decoration:none">Tools</a> &rsaquo;
+      <span>Pet Calorie Calculator</span>
+    </nav>
+    <h1 style="font-family:Nunito,sans-serif;font-weight:800;font-size:2.3rem;line-height:1.15;margin:0 0 12px 0;color:#fff">Pet Calorie Calculator</h1>
+    <p style="font-family:Inter,sans-serif;font-size:1.05rem;line-height:1.5;max-width:680px;color:rgba(255,255,255,0.95);margin:0">Find out exactly how much to feed your dog or cat based on their size, age, and activity level.</p>
+  </div>
+</section>
+
+<section style="background:#fff;padding:48px 0">
+  <div class="container" style="max-width:760px">
+    <div class="tool-card">
+      <label class="tool-label">Pet type</label>
+      <div class="tool-toggle-group">
+        <button type="button" class="tool-toggle active" data-toggle="pet" onclick="_toggle('pet',this,'dog')">&#128054; Dog</button>
+        <button type="button" class="tool-toggle" data-toggle="pet" onclick="_toggle('pet',this,'cat')">&#128049; Cat</button>
+      </div>
+      <label class="tool-label" for="pet-name">Pet name</label>
+      <input id="pet-name" class="tool-input" type="text" placeholder="Your pet&rsquo;s name">
+      <label class="tool-label" for="pet-weight">Weight</label>
+      <div style="display:flex;gap:8px">
+        <input id="pet-weight" class="tool-input" type="number" min="0" step="0.1" placeholder="e.g. 45" style="flex:1">
+        <div class="tool-toggle-group" style="flex:0 0 auto">
+          <button type="button" class="tool-toggle active" data-toggle="unit" onclick="_toggle('unit',this,'lb')">lb</button>
+          <button type="button" class="tool-toggle" data-toggle="unit" onclick="_toggle('unit',this,'kg')">kg</button>
+        </div>
+      </div>
+      <label class="tool-label" for="pet-age">Age</label>
+      <div style="display:flex;gap:8px">
+        <input id="pet-age" class="tool-input" type="number" min="0" step="1" placeholder="e.g. 3" style="flex:1">
+        <div class="tool-toggle-group" style="flex:0 0 auto">
+          <button type="button" class="tool-toggle active" data-toggle="ageunit" onclick="_toggle('ageunit',this,'years')">years</button>
+          <button type="button" class="tool-toggle" data-toggle="ageunit" onclick="_toggle('ageunit',this,'months')">months</button>
+        </div>
+      </div>
+      <label class="tool-label" for="activity">Activity level</label>
+      <select id="activity" class="tool-select">
+        <option value="sedentary">Sedentary (little exercise)</option>
+        <option value="lightly_active">Lightly active (1 walk/day)</option>
+        <option value="moderately_active" selected>Moderately active (2 walks/day)</option>
+        <option value="very_active">Very active (runs, plays often)</option>
+        <option value="working">Working dog (herding, hunting)</option>
+      </select>
+      <label class="tool-label">Spayed or neutered</label>
+      <div class="tool-toggle-group">
+        <button type="button" class="tool-toggle active" data-toggle="spayed" onclick="_toggle('spayed',this,'yes')">Yes</button>
+        <button type="button" class="tool-toggle" data-toggle="spayed" onclick="_toggle('spayed',this,'no')">No</button>
+      </div>
+      <label class="tool-label" for="body">Body condition</label>
+      <select id="body" class="tool-select">
+        <option value="underweight">Underweight (need to gain)</option>
+        <option value="ideal" selected>Ideal weight</option>
+        <option value="overweight">Overweight (need to lose)</option>
+      </select>
+      <button id="tool-submit" type="button" class="tool-submit" onclick="runCalorie()">Calculate Calories &#128200;</button>
+    </div>
+    <div id="tool-result" style="margin-top:24px"></div>
+
+
+  </div>
+</section>
+
+<section style="background:#FFF8E7;padding:48px 0">
+  <div class="container">
+    <p style="font-family:Nunito,sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#92400E;text-align:center;margin-bottom:8px">How it works</p>
+    <h2 style="font-family:Nunito,sans-serif;font-weight:800;font-size:1.7rem;text-align:center;color:#1a1a1a;margin-bottom:32px">Three simple steps</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:900px;margin:0 auto">
+      <div style="background:#fff;border:1px solid #f0e5ce;border-radius:12px;padding:24px;text-align:center"><div style="width:44px;height:44px;background:#F59E0B;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:14px">1</div><p style="font-family:Inter,sans-serif;font-size:0.95rem;color:#444;line-height:1.5;margin:0">Enter your pet’s details &mdash; weight, age, and name.</p></div><div style="background:#fff;border:1px solid #f0e5ce;border-radius:12px;padding:24px;text-align:center"><div style="width:44px;height:44px;background:#F59E0B;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:14px">2</div><p style="font-family:Inter,sans-serif;font-size:0.95rem;color:#444;line-height:1.5;margin:0">Select activity level and body condition.</p></div><div style="background:#fff;border:1px solid #f0e5ce;border-radius:12px;padding:24px;text-align:center"><div style="width:44px;height:44px;background:#F59E0B;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:14px">3</div><p style="font-family:Inter,sans-serif;font-size:0.95rem;color:#444;line-height:1.5;margin:0">Get a personalized daily feeding plan in seconds.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fafafa;padding:48px 0">
+  <div class="container">
+    <h2 style="font-family:Nunito,sans-serif;font-weight:800;font-size:1.5rem;text-align:center;color:#1a1a1a;margin-bottom:24px">Related pet tools</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:900px;margin:0 auto">
+      <a href="/tools/food-checker/" style="display:block;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;font-family:Nunito,sans-serif;font-weight:700;font-size:1.05rem;text-align:center">Food Safety Checker &rarr;</a><a href="/tools/grooming-calculator/" style="display:block;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;font-family:Nunito,sans-serif;font-weight:700;font-size:1.05rem;text-align:center">Grooming Cost Calculator &rarr;</a><a href="/tools/vet-cost-estimator/" style="display:block;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;font-family:Nunito,sans-serif;font-weight:700;font-size:1.05rem;text-align:center">Vet Cost Estimator &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:linear-gradient(135deg,#92400E 0%,#F59E0B 100%);padding:48px 0;color:#fff;text-align:center">
+  <div class="container">
+    <h2 style="font-family:Nunito,sans-serif;font-weight:800;font-size:1.7rem;color:#fff;margin:0 0 12px 0">Have more pet questions?</h2>
+    <p style="font-family:Inter,sans-serif;font-size:1rem;color:rgba(255,255,255,0.95);max-width:560px;margin:0 auto 22px">Ask Lucy AI &mdash; our 24/7 pet assistant for everything from health to training.</p>
+    <a href="/lucy/" style="display:inline-block;background:#fff;color:#92400E;font-family:Nunito,sans-serif;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:10px;text-decoration:none">&#10024; Ask Lucy AI</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script>
+function _el(id){return document.getElementById(id);}
+function _busy(b){var btn=_el('tool-submit');if(!btn)return;if(b){btn.dataset.lbl=btn.textContent;btn.textContent='Thinking...';btn.disabled=true;}else{if(btn.dataset.lbl)btn.textContent=btn.dataset.lbl;btn.disabled=false;}}
+function _esc(s){return String(s||'').replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function _render(txt){var html=_esc(txt);html=html.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');var lines=html.split('\n');var out=[];var inList=false;for(var i=0;i<lines.length;i++){var ln=lines[i];if(/^\s*[-*]\s+/.test(ln)){if(!inList){out.push('<ul style="margin:0 0 12px 20px;padding:0">');inList=true;}out.push('<li style="margin:4px 0">'+ln.replace(/^\s*[-*]\s+/,'')+'</li>');}else if(/^\s*\d+\.\s+/.test(ln)){if(!inList){out.push('<ol style="margin:0 0 12px 20px;padding:0">');inList='ol';}out.push('<li style="margin:4px 0">'+ln.replace(/^\s*\d+\.\s+/,'')+'</li>');}else{if(inList){out.push(inList==='ol'?'</ol>':'</ul>');inList=false;}if(ln.trim()==='')out.push('');else out.push('<p style="margin:0 0 10px 0">'+ln+'</p>');}}if(inList)out.push(inList==='ol'?'</ol>':'</ul>');return out.join('');}
+function _toggle(group,btn,value){var els=document.querySelectorAll('[data-toggle="'+group+'"]');for(var i=0;i<els.length;i++)els[i].classList.remove('active');btn.classList.add('active');window['_v_'+group]=value;}
+function _getToggle(group,defaultVal){return window['_v_'+group]||defaultVal;}
+function _setResult(html){_el('tool-result').innerHTML=html;}
+function _callTool(toolKey,message,gaEvent,gaParams,onResponse){_busy(true);if(window.gtag&&gaEvent)gtag('event',gaEvent,gaParams||{});fetch('/.netlify/functions/pet-tools',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({tool:toolKey,message:message})}).then(function(r){return r.json();}).then(function(data){_busy(false);var txt='';if(data&&data.content){if(Array.isArray(data.content))txt=data.content.map(function(c){return c.text||'';}).join('\n');else txt=String(data.content);}else if(data&&data.error){txt='Error: '+data.error;}if(onResponse)onResponse(txt);else _setResult('<div class="tool-result-card">'+_render(txt)+'</div>');}).catch(function(){_busy(false);_setResult('<div class="tool-result-card danger">Sorry, something went wrong. Please try again.</div>');});}
+
+function runCalorie(){
+  var name=_el('pet-name').value.trim()||'my pet';
+  var weight=_el('pet-weight').value;
+  if(!weight){_el('pet-weight').focus();return;}
+  var unit=_getToggle('unit','lb');
+  var age=_el('pet-age').value;
+  var ageunit=_getToggle('ageunit','years');
+  var activity=_el('activity').value.replace(/_/g,' ');
+  var spayed=_getToggle('spayed','yes');
+  var body=_el('body').value;
+  var pet=_getToggle('pet','dog');
+  var msg='Calculate daily calorie needs for '+name+', a '+pet+'. Weight: '+weight+' '+unit+'. Age: '+(age||'unknown')+' '+ageunit+'. Activity level: '+activity+'. Spayed/neutered: '+spayed+'. Body condition: '+body+'. Provide daily calorie target, cups of dry food (assume 350 cal/cup), feeding frequency, and any weight-management tips.';
+  _callTool('calorie-calculator',msg,'calorie_calculation_run',{pet_type:pet,activity:activity});
+}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YVNBXJBZZ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YVNBXJBZZ3');
+</script>
+</body>
+</html>
