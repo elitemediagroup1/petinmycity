@@ -2,7 +2,7 @@
 
 (function(){
   function buildHeader(){
-    return `<nav class="pimc-nav">
+    return `<style>.nav-dropdown{position:relative}.nav-dropdown-menu{display:none;position:absolute;top:100%;left:0;background:white;border:1px solid #fde68a;border-radius:12px;padding:8px 0;min-width:230px;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:9999}.nav-dropdown:hover .nav-dropdown-menu{display:block}.nav-dropdown-menu a{display:flex;align-items:center;gap:10px;padding:10px 16px;font-family:Inter,sans-serif;font-size:0.875rem;color:#374151;text-decoration:none;transition:background 0.15s}.nav-dropdown-menu a:hover{background:#fff8e7;color:#92400e}.nav-dropdown-see-all{border-top:1px solid #fde68a;margin-top:4px;padding-top:4px;font-weight:700 !important;color:#f59e0b !important}.paw-tools-toggle{cursor:pointer;display:flex;align-items:center;gap:4px}.paw-tools-mobile{display:none;flex-direction:column;padding-left:16px}.paw-tools-mobile.open{display:flex}</style><nav class="pimc-nav">
   <div class="pimc-logo-row">
     <a href="/" class="pimc-logo-link" style="display:inline-flex;align-items:center;text-decoration:none">
       <img src="/assets/logo.png" alt="PetsInMyCity - Your Local Pet Resource" style="height:200px;width:auto;display:block">
@@ -15,7 +15,22 @@
         <a href="/adoption/">Adoption</a>
         <a href="/dog-care/">Dog Care</a>
         <a href="/find-a-vet/">Find a Vet</a>
-        <a href="/tools/">Tools</a>
+        <li class="nav-dropdown" style="list-style:none;display:inline-block;margin:0;padding:0">
+          <a href="/tools/" class="paw-tools-toggle" style="font-weight:600">&#128062; Paw Tools <span style="font-size:0.7rem;margin-left:2px">&#9660;</span></a>
+          <ul class="nav-dropdown-menu" style="list-style:none;margin:0">
+            <li><a href="/tools/food-checker/">&#127837; Can My Pet Eat This?</a></li>
+            <li><a href="/tools/calorie-calculator/">&#128290; Calorie Calculator</a></li>
+            <li><a href="/tools/symptom-checker/">&#128137; Symptom Checker</a></li>
+            <li><a href="/tools/breed-matcher/">&#128054; Breed Matcher</a></li>
+            <li><a href="/tools/name-generator/">&#10024; Name Generator</a></li>
+            <li><a href="/tools/vet-cost-estimator/">&#128176; Vet Cost Estimator</a></li>
+            <li><a href="/tools/emergency-finder/">&#128680; Emergency Finder</a></li>
+            <li><a href="/tools/dog-park-finder/">&#127795; Dog Park Finder</a></li>
+            <li><a href="/tools/grooming-calculator/">&#9986; Grooming Calculator</a></li>
+            <li><a href="/tools/lost-pet/">&#128062; Lost Pet Assistant</a></li>
+            <li><a href="/tools/" class="nav-dropdown-see-all">See all Paw Tools &#8594;</a></li>
+          </ul>
+        </li>
         <a href="/lucy/" style="color:var(--amber);font-weight:700">&#10024; Lucy AI</a>
         <a href="/#cities">Cities</a>
       </div>
@@ -31,7 +46,22 @@
     <a href="/adoption/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#128062; Adoption</a>
     <a href="/dog-care/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129436; Dog Care</a>
     <a href="/find-a-vet/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129658; Find a Vet</a>
-    <a href="/tools/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#128736;&#65039; Tools</a>
+    <div style="border-bottom:1px solid var(--border)">
+      <span onclick="togglePawTools()" class="paw-tools-toggle" style="font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);padding:14px 0;display:flex;align-items:center;gap:6px;cursor:pointer">&#128062; Paw Tools <span style="font-size:0.7rem">&#9660;</span></span>
+      <ul id="paw-tools-mobile" class="paw-tools-mobile" style="list-style:none;margin:0;padding:0 0 8px 16px">
+        <li><a href="/tools/food-checker/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#127837; Can My Pet Eat This?</a></li>
+        <li><a href="/tools/calorie-calculator/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#128290; Calorie Calculator</a></li>
+        <li><a href="/tools/symptom-checker/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#128137; Symptom Checker</a></li>
+        <li><a href="/tools/breed-matcher/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#128054; Breed Matcher</a></li>
+        <li><a href="/tools/name-generator/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#10024; Name Generator</a></li>
+        <li><a href="/tools/vet-cost-estimator/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#128176; Vet Cost Estimator</a></li>
+        <li><a href="/tools/emergency-finder/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#128680; Emergency Finder</a></li>
+        <li><a href="/tools/dog-park-finder/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#127795; Dog Park Finder</a></li>
+        <li><a href="/tools/grooming-calculator/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#9986; Grooming Calculator</a></li>
+        <li><a href="/tools/lost-pet/" style="font-family:Nunito;font-size:0.9rem;color:var(--charcoal);text-decoration:none;padding:8px 0;display:block">&#128062; Lost Pet Assistant</a></li>
+        <li><a href="/tools/" style="font-family:Nunito;font-size:0.9rem;color:var(--amber);font-weight:700;text-decoration:none;padding:10px 0;display:block;border-top:1px solid #fde68a;margin-top:4px">See all Paw Tools &#8594;</a></li>
+      </ul>
+    </div>
     <a href="/lucy/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:700;font-size:1rem;color:var(--amber);text-decoration:none">&#10024; Lucy AI</a>
     <a href="/#cities" style="display:block;padding:14px 0;font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#127961;&#65039; Cities</a>
   </div>
@@ -185,4 +215,11 @@ window.toggleMobileNav = function toggleMobileNav() {
     hamburger.setAttribute('aria-expanded', 'true');
   }
 };
+
+function togglePawTools() {
+  var menu = document.getElementById('paw-tools-mobile');
+  if (menu) {
+    menu.classList.toggle('open');
+  }
+}
 
