@@ -48,15 +48,19 @@
   <div class="container">
     <p style="font-family:Nunito;font-weight:700;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber-dark);margin-bottom:12px">&#x1F43E; Your local pet resource</p>
     <h1>Find Everything Your Pet Needs <span class="highlight">in Your City</span></h1>
-    <p class="hero-sub">Pet insurance quotes, local vets, adoption resources, grooming, boarding and training &mdash; all free to search, all local to you.</p>
+    <p class="hero-sub">Find pet insurance, local vets, adoption resources, grooming, boarding, training, pet supplies, DNA testing, and trusted national partners &mdash; all free, all local to you.</p>
+    <p style="font-family:Nunito;font-weight:700;font-size:0.95rem;color:var(--amber-dark);margin:8px 0 22px 0;letter-spacing:0.3px">&#x1F43E; Built for pet owners, not advertisers.</p>
     <div class="hero-search">
       <span style="font-size:1.1rem">&#x1F4CD;</span>
       <input type="text" placeholder="Enter your ZIP code..." id="zip-search" maxlength="5" inputmode="numeric" pattern="[0-9]*">
-      <button onclick="searchByZip()">Find Pet Services</button>
+      <button onclick="searchByZip()">Find Pet Resources Near Me</button>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px">
+      <a href="/pet-insurance/" style="display:inline-flex;align-items:center;gap:6px;padding:12px 22px;background:white;color:var(--amber-dark);border:2px solid var(--amber);border-radius:999px;font-family:Nunito;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.15s">&#x1F3E5; Explore Pet Insurance</a>
     </div>
     <div class="hero-trust">
       <span><span class="trust-dot"></span>Free to use</span>
-      <span><span class="trust-dot"></span>No spam</span>
+      <span><span class="trust-dot"></span>No lead spam</span>
       <span><span class="trust-dot"></span>Local results</span>
       <span><span class="trust-dot"></span>No commitment</span>
     </div>
@@ -111,14 +115,47 @@
       <a href="/#insurance" class="service-card"><span class="service-emoji">&#x1F3E5;</span><div class="service-name">Pet Insurance</div><div class="service-desc">Compare plans free</div></a>
       <a href="/adoption/" class="service-card"><span class="service-emoji">&#x1F43E;</span><div class="service-name">Adoption</div><div class="service-desc">Find a rescue near you</div></a>
       <a href="/find-a-vet/" class="service-card"><span class="service-emoji">&#x1FA7A;</span><div class="service-name">Find a Vet</div><div class="service-desc">Local vets near you</div></a>
-      <a href="https://www.chewy.com/" class="service-card" target="_blank" rel="sponsored noopener"><span class="service-emoji">&#x1F6D2;</span><div class="service-name">Supplies</div><div class="service-desc">Food and gear</div></a>
-      <a href="https://www.barkbox.com/" class="service-card" target="_blank" rel="sponsored noopener"><span class="service-emoji">&#x1F4E6;</span><div class="service-name">BarkBox</div><div class="service-desc">Monthly toys and treats</div></a>
-      <a href="https://embarkvet.com/" class="service-card" target="_blank" rel="sponsored noopener"><span class="service-emoji">&#x1F9EC;</span><div class="service-name">DNA Test</div><div class="service-desc">Know your breed</div></a>
-      <a href="/find-a-vet/" class="service-card"><span class="service-emoji">&#x2702;</span><div class="service-name">Grooming</div><div class="service-desc">Find local groomers</div></a>
-      <a href="/find-a-vet/" class="service-card"><span class="service-emoji">&#x1F3E1;</span><div class="service-name">Boarding</div><div class="service-desc">Trusted overnight care</div></a>
+      <a href="/supplies/" class="service-card"><span class="service-emoji">&#x1F6D2;</span><div class="service-name">Pet Supplies</div><div class="service-desc">Food, toys, and gear</div></a>
+      <a href="/pet-boxes/" class="service-card"><span class="service-emoji">&#x1F4E6;</span><div class="service-name">Subscription Boxes</div><div class="service-desc">Monthly treats and toys</div></a>
+      <a href="/dna-testing/" class="service-card"><span class="service-emoji">&#x1F9EC;</span><div class="service-name">Pet DNA Test</div><div class="service-desc">Breed and health insights</div></a>
+      <a href="/grooming/" class="service-card"><span class="service-emoji">&#x2702;</span><div class="service-name">Grooming</div><div class="service-desc">Find local groomers</div></a>
+      <a href="/boarding/" class="service-card"><span class="service-emoji">&#x1F3E1;</span><div class="service-name">Boarding</div><div class="service-desc">Trusted overnight care</div></a>
+      <a href="/training/" class="service-card"><span class="service-emoji">&#x1F415;</span><div class="service-name">Training</div><div class="service-desc">Find local dog trainers</div></a>
+      <a href="/dog-care/" class="service-card"><span class="service-emoji">&#x1F6B6;</span><div class="service-name">Dog Walking</div><div class="service-desc">Walks and pet sitting</div></a>
     </div>
   </div>
 </section>
+
+<section style="background:var(--cream);padding:64px 0">
+  <div class="container">
+    <p class="section-label" style="text-align:center">Consumer-first</p>
+    <h2 style="text-align:center;font-family:Nunito;font-weight:800;font-size:1.9rem;color:var(--charcoal);margin:0 0 12px 0">Why Pet Owners Use PetsInMyCity</h2>
+    <p style="text-align:center;color:var(--gray);font-size:1rem;max-width:720px;margin:0 auto 36px;line-height:1.6">We help you find the right next step without blasting your information to every company on the internet.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1100px;margin:0 auto">
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:24px;text-align:center;box-shadow:0 2px 10px rgba(146,64,14,0.04)">
+        <div style="font-size:2rem;margin-bottom:10px">&#x1F4CD;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.05rem;color:var(--charcoal);margin:0 0 8px 0">Local-first pet resources</h3>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.55;margin:0">City-by-city guides for vets, groomers, boarding, and adoption.</p>
+      </div>
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:24px;text-align:center;box-shadow:0 2px 10px rgba(146,64,14,0.04)">
+        <div style="font-size:2rem;margin-bottom:10px">&#x2705;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.05rem;color:var(--charcoal);margin:0 0 8px 0">Trusted national partners</h3>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.55;margin:0">Curated insurance, DNA testing, subscription boxes, and supplies.</p>
+      </div>
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:24px;text-align:center;box-shadow:0 2px 10px rgba(146,64,14,0.04)">
+        <div style="font-size:2rem;margin-bottom:10px">&#x1F6E1;&#xFE0F;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.05rem;color:var(--charcoal);margin:0 0 8px 0">No lead spam</h3>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.55;margin:0">We do not sell your info to multiple companies. Your details are only used for the request you choose.</p>
+      </div>
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:24px;text-align:center;box-shadow:0 2px 10px rgba(146,64,14,0.04)">
+        <div style="font-size:2rem;margin-bottom:10px">&#x1F381;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.05rem;color:var(--charcoal);margin:0 0 8px 0">Free to use</h3>
+        <p style="font-size:0.875rem;color:var(--gray);line-height:1.55;margin:0">No paywalls, no signups. Affiliate-supported so pet owners pay nothing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section style="padding:0 0 56px 0;background:var(--white)">
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:400px">
@@ -128,7 +165,7 @@
     <div style="padding:48px 40px;display:flex;flex-direction:column;justify-content:center;background:var(--cream)">
       <p style="font-family:Nunito;font-weight:700;font-size:0.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px">Why petsinmycity.com</p>
       <h2 style="font-family:Nunito;font-weight:800;font-size:1.8rem;color:var(--charcoal);margin-bottom:16px;line-height:1.2">Built for pet owners, not advertisers</h2>
-      <p style="color:var(--gray);font-size:0.95rem;line-height:1.7;margin-bottom:20px">We connect you with one local provider &mdash; not a marketplace that auctions your details to dozens of companies. Free to use, no spam, no commitment ever.</p>
+      <p style="color:var(--gray);font-size:0.95rem;line-height:1.7;margin-bottom:20px">We do not sell your information to multiple companies. When you choose to connect with a provider, your information is only used for that specific request. Free to use, no lead spam, no commitment.</p>
       <div style="display:flex;flex-direction:column;gap:10px">
         <div style="display:flex;align-items:center;gap:10px">
           <span style="width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0">&#x2713;</span>
@@ -144,7 +181,7 @@
         </div>
         <div style="display:flex;align-items:center;gap:10px">
           <span style="width:24px;height:24px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0">&#x2713;</span>
-          <span style="font-size:0.9rem;color:var(--charcoal);font-weight:500">Your info never sold or shared</span>
+          <span style="font-size:0.9rem;color:var(--charcoal);font-weight:500">Your info is never sold to multiple companies</span>
         </div>
       </div>
     </div>
@@ -297,6 +334,47 @@
     <div class="faq-item">
       <p class="faq-q">Does petsinmycity.com sell my information?</p>
       <p class="faq-a">No. Your information is never sold or shared with third parties. We connect you with one local provider based on your needs &mdash; not a marketplace that auctions your details to dozens of companies. Elite Media Group LLC respects your privacy.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section style="background:linear-gradient(135deg, #FFF8E7 0%, #FFFFFF 100%);padding:64px 0;border-top:1px solid #f5e6c2">
+  <div class="container">
+    <p class="section-label" style="text-align:center;color:var(--amber-dark)">For partners</p>
+    <h2 style="text-align:center;font-family:Nunito;font-weight:800;font-size:1.9rem;color:var(--charcoal);margin:0 0 12px 0">For Pet Brands and Local Service Providers</h2>
+    <p style="text-align:center;color:var(--gray);font-size:1rem;max-width:780px;margin:0 auto 36px;line-height:1.65">PetsInMyCity helps pet owners discover trusted products and services at the exact moment they need them: adoption, first vet visit, insurance shopping, food delivery, grooming, boarding, training, and everyday pet care.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:0 auto 32px">
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:28px;box-shadow:0 4px 14px rgba(146,64,14,0.06)">
+        <div style="font-size:2.2rem;margin-bottom:12px">&#x1F30E;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.15rem;color:var(--charcoal);margin:0 0 8px 0">National pet brands</h3>
+        <p style="font-size:0.9rem;color:var(--gray);line-height:1.6;margin:0">Reach pet owners during high-intent moments &mdash; insurance, DNA, food, supplies, and subscriptions.</p>
+      </div>
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:28px;box-shadow:0 4px 14px rgba(146,64,14,0.06)">
+        <div style="font-size:2.2rem;margin-bottom:12px">&#x1F3EA;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.15rem;color:var(--charcoal);margin:0 0 8px 0">Local pet businesses</h3>
+        <p style="font-size:0.9rem;color:var(--gray);line-height:1.6;margin:0">Get featured on city pages for groomers, boarding, training, walking, and supplies.</p>
+      </div>
+      <div style="background:white;border:1px solid #f0e5ce;border-radius:14px;padding:28px;box-shadow:0 4px 14px rgba(146,64,14,0.06)">
+        <div style="font-size:2.2rem;margin-bottom:12px">&#x1F415;</div>
+        <h3 style="font-family:Nunito;font-weight:800;font-size:1.15rem;color:var(--charcoal);margin:0 0 8px 0">Shelters and rescues</h3>
+        <p style="font-size:0.9rem;color:var(--gray);line-height:1.6;margin:0">Free placement for adoption resources, with city and neighborhood targeting.</p>
+      </div>
+    </div>
+    <div style="text-align:center">
+      <a href="/partners/" style="display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:linear-gradient(135deg, #92400E 0%, #F59E0B 100%);color:white;border-radius:999px;font-family:Nunito;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 6px 18px rgba(245,158,11,0.3)">Partner With PetsInMyCity &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:white;padding:36px 0;border-top:1px solid #f5e6c2;border-bottom:1px solid #f5e6c2">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;text-align:center;max-width:1100px;margin:0 auto">
+      <div><p style="font-family:Nunito;font-weight:700;font-size:0.9rem;color:var(--charcoal);margin:0">Powered by Elite Media Group</p></div>
+      <div><p style="font-family:Nunito;font-weight:700;font-size:0.9rem;color:var(--charcoal);margin:0">Affiliate-supported, consumer-first</p></div>
+      <div><p style="font-family:Nunito;font-weight:700;font-size:0.9rem;color:var(--charcoal);margin:0">Free to use</p></div>
+      <div><p style="font-family:Nunito;font-weight:700;font-size:0.9rem;color:var(--charcoal);margin:0">Local + national partner access</p></div>
     </div>
   </div>
 </section>
