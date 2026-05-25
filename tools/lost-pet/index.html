@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost Pet Assistant &mdash; What To Do If You Lost Your Pet | PetsInMyCity</title>
+<meta name="description" content="Lost your pet? Get an immediate action plan from our AI lost pet assistant. Every minute matters — start here.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://petsinmycity.com/tools/lost-pet/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PetsInMyCity">
+<meta property="og:url" content="https://petsinmycity.com/tools/lost-pet/">
+<meta property="og:title" content="Lost Pet Assistant — What To Do If You Lost Your Pet">
+<meta property="og:description" content="Lost your pet? Get an immediate action plan from our AI lost pet assistant. Every minute matters — start here.">
+<meta property="og:image" content="https://petsinmycity.com/assets/logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@petsinmycity">
+<meta name="twitter:title" content="Lost Pet Assistant — What To Do If You Lost Your Pet">
+<meta name="twitter:description" content="Lost your pet? Get an immediate action plan from our AI lost pet assistant. Every minute matters — start here.">
+<meta name="twitter:image" content="https://petsinmycity.com/assets/logo.png">
+<link rel="apple-touch-icon" href="/assets/logo.png">
+<meta name="theme-color" content="#F59E0B">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/script.js" defer></script>
+<script src="/assets/lucy.js" defer></script>
+<style>
+.tool-card{background:#fff;border:1px solid #f0e5ce;border-radius:14px;padding:28px;box-shadow:0 4px 20px rgba(146,64,14,0.06)}
+.tool-label{display:block;font-family:Nunito,sans-serif;font-weight:700;font-size:0.92rem;color:#1a1a1a;margin:14px 0 8px 0}
+.tool-input,.tool-textarea,.tool-select{width:100%;font-family:Inter,sans-serif;font-size:1rem;padding:12px 14px;border:1.5px solid #e5d9bd;border-radius:8px;background:#fff;color:#1a1a1a;box-sizing:border-box}
+.tool-textarea{min-height:96px;resize:vertical}
+.tool-toggle-group{display:flex;gap:8px;flex-wrap:wrap}
+.tool-toggle{flex:1;min-width:90px;padding:12px 14px;background:#FFF8E7;border:1.5px solid #e5d9bd;color:#1a1a1a;border-radius:8px;cursor:pointer;font-family:Nunito,sans-serif;font-weight:700;font-size:0.95rem;text-align:center}
+.tool-toggle.active{background:#F59E0B;color:#fff;border-color:#F59E0B}
+.tool-check-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.tool-check{display:flex;align-items:center;gap:8px;padding:10px 12px;background:#FFF8E7;border:1.5px solid #e5d9bd;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;font-size:0.92rem}
+.tool-check input{margin:0}
+.tool-submit{display:inline-block;background:#F59E0B;color:#fff;font-family:Nunito,sans-serif;font-weight:800;font-size:1.05rem;padding:14px 28px;border:none;border-radius:10px;cursor:pointer;margin-top:18px;width:100%}
+.tool-submit:hover{background:#92400E}
+.tool-submit.danger{background:#dc2626}
+.tool-submit.danger:hover{background:#991b1b}
+.tool-result-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:24px;font-family:Inter,sans-serif;font-size:1rem;line-height:1.6;color:#222}
+.tool-result-card.safe{background:#ecfdf5;border-color:#a7f3d0}
+.tool-result-card.danger{background:#fef2f2;border-color:#fca5a5}
+.tool-result-card.caution{background:#fffbeb;border-color:#fcd34d}
+.tool-result-card h3{font-family:Nunito,sans-serif;font-weight:800;margin:0 0 12px 0;font-size:1.2rem}
+.tool-disclaimer{background:#FFF8E7;border:1px solid #f0e5ce;border-radius:10px;padding:14px 18px;font-family:Inter,sans-serif;font-size:0.88rem;color:#6b5a36;margin-top:20px;line-height:1.5}
+.warn-bar{background:#fef2f2;border:2px solid #dc2626;color:#7f1d1d;padding:14px 18px;border-radius:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:20px;line-height:1.5}
+.urgent-banner{background:#fffbeb;border:2px solid #F59E0B;color:#7c2d12;padding:14px 18px;border-radius:10px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.98rem;margin-bottom:20px;line-height:1.5}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://petsinmycity.com/"},{"@type":"ListItem","position":2,"name":"Tools","item":"https://petsinmycity.com/tools/"},{"@type":"ListItem","position":3,"name":"Lost Pet Assistant","item":"https://petsinmycity.com/tools/lost-pet/"}]}
+</script>
+</head>
+<body>
+<div id="site-header"></div>
+<section style="background:linear-gradient(135deg,#92400E 0%,#F59E0B 100%);padding:48px 0;color:#fff">
+  <div class="container">
+    <nav style="font-family:Nunito,sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.9);margin-bottom:16px">
+      <a href="/" style="color:#fff;text-decoration:none">Home</a> &rsaquo;
+      <a href="/tools/" style="color:#fff;text-decoration:none">Tools</a> &rsaquo;
+      <span>Lost Pet Assistant</span>
+    </nav>
+    <h1 style="font-family:Nunito,sans-serif;font-weight:800;font-size:2.3rem;line-height:1.15;margin:0 0 12px 0;color:#fff">Lost Pet Assistant</h1>
+    <p style="font-family:Inter,sans-serif;font-size:1.05rem;line-height:1.5;max-width:680px;color:rgba(255,255,255,0.95);margin:0">Every minute matters. Get your personalized action plan right now.</p>
+  </div>
+</section>
+<section style="background:#fff;padding:48px 0">
+  <div class="container" style="max-width:760px">
+    <div class="tool-card">
+      <div class="urgent-banner">&#128680; Act fast &mdash; pets found within the first hour have the highest recovery rate.</div>
+      <label class="tool-label">Pet type</label>
+      <div class="tool-toggle-group">
+        <button type="button" class="tool-toggle active" data-toggle="pet" onclick="_toggle('pet',this,'dog')">&#128054; Dog</button>
+        <button type="button" class="tool-toggle" data-toggle="pet" onclick="_toggle('pet',this,'cat')">&#128049; Cat</button>
+        <button type="button" class="tool-toggle" data-toggle="pet" onclick="_toggle('pet',this,'other')">Other</button>
+      </div>
+      <label class="tool-label" for="dur">How long missing?</label>
+      <select id="dur" class="tool-select">
+        <option value="less than 1 hour" selected>Less than 1 hour</option>
+        <option value="1-6 hours">1-6 hours</option>
+        <option value="6-24 hours">6-24 hours</option>
+        <option value="1-3 days">1-3 days</option>
+        <option value="more than 3 days">More than 3 days</option>
+      </select>
+      <label class="tool-label" for="area">Last seen location type</label>
+      <select id="area" class="tool-select">
+        <option value="my neighborhood" selected>My neighborhood</option>
+        <option value="unfamiliar area">Unfamiliar area</option>
+        <option value="rural or wooded area">Rural or wooded area</option>
+        <option value="near a busy road">Near a busy road</option>
+        <option value="unknown">Unknown</option>
+      </select>
+      <label class="tool-label">Microchipped?</label>
+      <div class="tool-toggle-group">
+        <button type="button" class="tool-toggle active" data-toggle="chip" onclick="_toggle('chip',this,'yes')">Yes</button>
+        <button type="button" class="tool-toggle" data-toggle="chip" onclick="_toggle('chip',this,'no')">No</button>
+        <button type="button" class="tool-toggle" data-toggle="chip" onclick="_toggle('chip',this,'unknown')">Unknown</button>
+      </div>
+      <button id="tool-submit" type="button" class="tool-submit" onclick="runLost()">Get My Action Plan &#128246;</button>
+    </div>
+    <div id="tool-result" style="margin-top:24px"></div>
+
+
+  </div>
+</section>
+<section style="background:#FFF8E7;padding:48px 0">
+  <div class="container">
+    <p style="font-family:Nunito,sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#92400E;text-align:center;margin-bottom:8px">How it works</p>
+    <h2 style="font-family:Nunito,sans-serif;font-weight:800;font-size:1.7rem;text-align:center;color:#1a1a1a;margin-bottom:32px">Three simple steps</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:900px;margin:0 auto">
+      <div style="background:#fff;border:1px solid #f0e5ce;border-radius:12px;padding:24px;text-align:center"><div style="width:44px;height:44px;background:#F59E0B;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:14px">1</div><p style="font-family:Inter,sans-serif;font-size:0.95rem;color:#444;line-height:1.5;margin:0">Tell us about your pet.</p></div><div style="background:#fff;border:1px solid #f0e5ce;border-radius:12px;padding:24px;text-align:center"><div style="width:44px;height:44px;background:#F59E0B;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:14px">2</div><p style="font-family:Inter,sans-serif;font-size:0.95rem;color:#444;line-height:1.5;margin:0">Describe the situation and how long it has been.</p></div><div style="background:#fff;border:1px solid #f0e5ce;border-radius:12px;padding:24px;text-align:center"><div style="width:44px;height:44px;background:#F59E0B;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:14px">3</div><p style="font-family:Inter,sans-serif;font-size:0.95rem;color:#444;line-height:1.5;margin:0">Get a step-by-step action plan with resources.</p></div>
+    </div>
+  </div>
+</section>
+<section style="background:#fafafa;padding:48px 0">
+  <div class="container">
+    <h2 style="font-family:Nunito,sans-serif;font-weight:800;font-size:1.5rem;text-align:center;color:#1a1a1a;margin-bottom:24px">Related pet tools</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:900px;margin:0 auto">
+      <a href="/tools/emergency-finder/" style="display:block;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;font-family:Nunito,sans-serif;font-weight:700;font-size:1.05rem;text-align:center">Emergency Finder &rarr;</a><a href="/tools/symptom-checker/" style="display:block;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;font-family:Nunito,sans-serif;font-weight:700;font-size:1.05rem;text-align:center">Symptom Checker &rarr;</a><a href="/tools/vet-cost-estimator/" style="display:block;background:#fff;border:1px solid #eee;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;font-family:Nunito,sans-serif;font-weight:700;font-size:1.05rem;text-align:center">Vet Cost Estimator &rarr;</a>
+    </div>
+  </div>
+</section>
+<section style="background:linear-gradient(135deg,#92400E 0%,#F59E0B 100%);padding:48px 0;color:#fff;text-align:center">
+  <div class="container">
+    <h2 style="font-family:Nunito,sans-serif;font-weight:800;font-size:1.7rem;color:#fff;margin:0 0 12px 0">Have more pet questions?</h2>
+    <p style="font-family:Inter,sans-serif;font-size:1rem;color:rgba(255,255,255,0.95);max-width:560px;margin:0 auto 22px">Ask Lucy AI &mdash; our 24/7 pet assistant for everything from health to training.</p>
+    <a href="/lucy/" style="display:inline-block;background:#fff;color:#92400E;font-family:Nunito,sans-serif;font-weight:800;font-size:1rem;padding:14px 28px;border-radius:10px;text-decoration:none">&#10024; Ask Lucy AI</a>
+  </div>
+</section>
+<div id="site-footer"></div>
+<script>
+function _el(id){return document.getElementById(id);}
+function _busy(b){var btn=_el('tool-submit');if(!btn)return;if(b){btn.dataset.lbl=btn.textContent;btn.textContent='Thinking...';btn.disabled=true;}else{if(btn.dataset.lbl)btn.textContent=btn.dataset.lbl;btn.disabled=false;}}
+function _esc(s){return String(s||'').replace(/[&<>]/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[ch];});}
+function _render(txt){var html=_esc(txt);html=html.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');var lines=html.split('\n');var out=[];var inList=false;for(var i=0;i<lines.length;i++){var ln=lines[i];if(/^\s*[-*]\s+/.test(ln)){if(!inList){out.push('<ul style="margin:0 0 12px 20px;padding:0">');inList=true;}out.push('<li style="margin:4px 0">'+ln.replace(/^\s*[-*]\s+/,'')+'</li>');}else if(/^\s*\d+\.\s+/.test(ln)){if(!inList){out.push('<ol style="margin:0 0 12px 20px;padding:0">');inList='ol';}out.push('<li style="margin:4px 0">'+ln.replace(/^\s*\d+\.\s+/,'')+'</li>');}else{if(inList){out.push(inList==='ol'?'</ol>':'</ul>');inList=false;}if(ln.trim()==='')out.push('');else out.push('<p style="margin:0 0 10px 0">'+ln+'</p>');}}if(inList)out.push(inList==='ol'?'</ol>':'</ul>');return out.join('');}
+function _toggle(g,btn,v){var els=document.querySelectorAll('[data-toggle="'+g+'"]');for(var i=0;i<els.length;i++)els[i].classList.remove('active');btn.classList.add('active');window['_v_'+g]=v;}
+function _getToggle(g,d){return window['_v_'+g]||d;}
+function _setResult(h){_el('tool-result').innerHTML=h;}
+function _callTool(t,m,e,p,cb){_busy(true);if(window.gtag&&e)gtag('event',e,p||{});fetch('/.netlify/functions/pet-tools',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({tool:t,message:m})}).then(function(r){return r.json();}).then(function(d){_busy(false);var x='';if(d&&d.content){if(Array.isArray(d.content))x=d.content.map(function(c){return c.text||'';}).join('\n');else x=String(d.content);}else if(d&&d.error){x='Error: '+d.error;}if(cb)cb(x);else _setResult('<div class="tool-result-card">'+_render(x)+'</div>');}).catch(function(){_busy(false);_setResult('<div class="tool-result-card danger">Sorry, something went wrong. Please try again.</div>');});}
+
+function runLost(){
+  var pet=_getToggle('pet','dog');
+  var dur=_el('dur').value;
+  var area=_el('area').value;
+  var chip=_getToggle('chip','yes');
+  var msg='My '+pet+' has been missing for '+dur+'. Last seen in: '+area+'. Microchipped: '+chip+'. Give me a numbered action plan: immediate steps in the first hour, who to contact and in what order, how to create an effective lost pet post, local resources to contact (mention PawBoost, Petco Love Lost, Nextdoor, local Facebook groups, and local shelters), tips for searching effectively, and what to do if someone finds my pet.';
+  _callTool('lost-pet',msg,'lost_pet_search_started',{pet_type:pet,duration:dur,microchipped:chip});
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YVNBXJBZZ3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YVNBXJBZZ3');
+</script>
+</body>
+</html>
