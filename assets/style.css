@@ -217,3 +217,24 @@
   .pimc-nav-row .pimc-nav-links{display:none !important}
   .pimc-nav-row #pimc-hamburger{display:flex !important;position:absolute !important;right:8px !important}
 }
+
+
+/* === Reusable listing card component === */
+.listing-card{background:#fff;border:1px solid #f0e5ce;border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:#1a1a1a;box-shadow:0 2px 10px rgba(146,64,14,0.04);transition:transform 0.15s, box-shadow 0.15s;position:relative}
+.listing-card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(146,64,14,0.1)}
+.listing-card .listing-name{font-family:Nunito,sans-serif;font-weight:800;font-size:1.1rem;color:#1a1a1a;margin:0}
+.listing-card .listing-category{font-family:Nunito,sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:1px;text-transform:uppercase;color:#92400E;margin:0}
+.listing-card .listing-location{font-size:0.85rem;color:#6b7280;margin:0}
+.listing-card .listing-area{font-size:0.82rem;color:#6b7280;margin:0;font-style:italic}
+.listing-card .listing-desc{font-size:0.9rem;color:#374151;line-height:1.55;margin:6px 0 8px 0}
+.listing-card .listing-cta{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:#92400E;color:#fff;border-radius:999px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.85rem;text-decoration:none;align-self:flex-start;margin-top:8px}
+.listing-card .listing-cta:hover{background:#7a3408}
+.listing-card .listing-featured-badge{position:absolute;top:14px;right:14px;background:linear-gradient(135deg, #92400E 0%, #F59E0B 100%);color:#fff;padding:4px 10px;border-radius:999px;font-family:Nunito,sans-serif;font-weight:800;font-size:0.7rem;letter-spacing:0.5px;text-transform:uppercase;box-shadow:0 4px 10px rgba(245,158,11,0.3)}
+.listing-card.featured{border:2px solid #F59E0B;background:linear-gradient(180deg, #FFFBF0 0%, #FFFFFF 100%)}
+
+/* Want to be listed? CTA */
+.listing-cta-banner{background:linear-gradient(135deg, #FFF8E7 0%, #FFFFFF 100%);border:2px dashed #f0e5ce;border-radius:14px;padding:32px 24px;text-align:center;margin:24px 0}
+.listing-cta-banner h3{font-family:Nunito,sans-serif;font-weight:800;font-size:1.2rem;color:#1a1a1a;margin:0 0 8px 0}
+.listing-cta-banner p{color:#6b7280;font-size:0.95rem;line-height:1.55;margin:0 0 16px 0}
+.listing-cta-banner a{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;background:#92400E;color:#fff;border-radius:999px;font-family:Nunito,sans-serif;font-weight:700;font-size:0.95rem;text-decoration:none}
+.listing-cta-banner a:hover{background:#7a3408}
