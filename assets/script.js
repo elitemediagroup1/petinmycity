@@ -164,9 +164,22 @@
     var footer = document.getElementById('site-footer');
     footer.parentNode.insertBefore(section, footer);
   }
+    function injectTopBanner() {
+    if (document.getElementById('pimc-top-banner')) return;
+    if (sessionStorage.getItem('pimc-banner-dismissed')) return;
+    var banner = document.createElement('div');
+    banner.id = 'pimc-top-banner';
+    banner.innerHTML =
+      '<div style="background:#f59e0b;color:white;font-family:Inter,sans-serif;font-size:0.85rem;font-weight:600;padding:10px 48px 10px 24px;text-align:center;position:relative;z-index:9998">' +
+      '&#128062; Get pet care tips, local deals, and updates for pet owners in your city &#8212; ' +
+      '<a href="#pimc-email-capture" style="color:white;text-decoration:underline;font-weight:700" onclick="document.getElementById(\'pimc-email-capture\').scrollIntoView({behavior:\'smooth\'});return false">Join free &#8594;</a>' +
+      '<button onclick="document.getElementById(\'pimc-top-banner\').style.display=\'none\';sessionStorage.setItem(\'pimc-banner-dismissed\',\'1\')" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:white;font-size:1.1rem;cursor:pointer;line-height:1;opacity:0.8;padding:4px 8px" aria-label="Dismiss">&#10005;</button>' +
+      '</div>';
+    document.body.insertBefore(banner, document.body.firstChild);
+  }
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){ mount(); injectEmailCapture(); });
-  } else { mount(); injectEmailCapture(); }
+    document.addEventListener('DOMContentLoaded', function(){ mount(); injectTopBanner(); injectEmailCapture(); });
+  } else { mount(); injectTopBanner(); injectEmailCapture(); }
 })();
 
 window.toggleMobileNav = function toggleMobileNav() {
