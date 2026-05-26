@@ -153,7 +153,7 @@
       'Join pet owners in your city who get the latest pet care tips, local resources, exclusive deals, and updates &#8212; all free, no spam.' +
       '</p>' +
       '<div style="background:white;border-radius:16px;padding:24px;margin-bottom:16px">' +
-      '<div id="pimc-hs-form-container"></div>' +
+      '<div class="hs-form-frame" data-region="na2" data-form-id="65869a5b-9fb0-4041-8d5c-1db518fff832" data-portal-id="243957727"></div>' +
       '</div>' +
       '<p style="font-family:Inter,sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.7);line-height:1.6;text-align:left;margin:0">' +
       'By providing your email address and/or phone number and checking the boxes above, you agree to receive email communications and/or text messages from PetsInMyCity.com, owned and operated by Elite Media Group LLC. Communications may include newsletters, pet care tips, local pet resources, exclusive deals, product recommendations, pet alerts, and other updates relevant to pet owners. Message frequency varies. Message and data rates may apply for text messages. You are not required to provide your phone number or agree to receive text messages as a condition of any purchase or service. You may unsubscribe from emails at any time by clicking the unsubscribe link in any email. You may opt out of text messages at any time by replying STOP. For help, reply HELP or contact us at hello@elitemediagroup.io. View our Privacy Policy at <a href="/privacy/" style="color:rgba(255,255,255,0.8)">petsinmycity.com/privacy</a>.' +
@@ -163,29 +163,11 @@
     var footer = document.getElementById('site-footer');
     footer.parentNode.insertBefore(section, footer);
 
-// Load HubSpot forms script then render form into container
-if (!window.hbspt) {
-  var hsScript = document.createElement('script');
-  hsScript.src = "https://js-na2.hsforms.net/forms/embed/243957727.js";
-  hsScript.onload = function() {
-    if (window.hbspt) {
-      window.hbspt.forms.create({
-        region: 'na2',
-        portalId: '243957727',
-        formId: "65869a5b-9fb0-4041-8d5c-1db518fff832",
-        target: '#pimc-hs-form-container'
-      });
-    }
-  };
-  document.head.appendChild(hsScript);
-} else {
-  window.hbspt.forms.create({
-    region: 'na2',
-    portalId: '243957727',
-    formId: "65869a5b-9fb0-4041-8d5c-1db518fff832",
-    target: '#pimc-hs-form-container'
-  });
-}
+// Load HubSpot embed script after injection so it auto-discovers .hs-form-frame
+var hsScript = document.createElement('script');
+hsScript.src = "https://js-na2.hsforms.net/forms/embed/243957727.js";
+hsScript.defer = true;
+document.head.appendChild(hsScript);
   }
     function injectTopBanner() {
     if (document.getElementById('pimc-top-banner')) return;
