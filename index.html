@@ -52,8 +52,8 @@
     <p style="font-family:Nunito;font-weight:700;font-size:0.95rem;color:var(--amber-dark);margin:8px 0 22px 0;letter-spacing:0.3px">&#x1F43E; Built for pet owners, not advertisers.</p>
     <div class="hero-search">
       <span style="font-size:1.1rem">&#x1F4CD;</span>
-      <input type="text" placeholder="Enter your ZIP code..." id="zip-search" maxlength="5" inputmode="numeric" pattern="[0-9]*">
-      <button onclick="searchByZip()">Find Pet Resources Near Me</button>
+      <input type="text" placeholder="Enter your ZIP code..." id="zip-search-input" maxlength="5" inputmode="numeric" pattern="[0-9]*">
+      <button id="zip-search-btn">Find Pet Resources Near Me</button>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:16px">
       <a href="/pet-insurance/" style="display:inline-flex;align-items:center;gap:6px;padding:12px 22px;background:white;color:var(--amber-dark);border:2px solid var(--amber);border-radius:999px;font-family:Nunito;font-weight:700;font-size:0.95rem;text-decoration:none;transition:all 0.15s">&#x1F3E5; Explore Pet Insurance</a>
@@ -510,5 +510,65 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 <div id="site-footer"></div>
+<script>
+(function() {
+  var btn = document.getElementById('zip-search-btn');
+  var input = document.getElementById('zip-search-input');
+  var resultsDiv = document.getElementById('zip-search-results');
+  if (!resultsDiv) {
+    resultsDiv = document.createElement('div');
+    resultsDiv.id = 'zip-search-results';
+    resultsDiv.style.cssText = 'max-width:800px;margin:24px auto;padding:0 24px';
+    if (input) {
+      input.closest('section') || input.parentNode.parentNode.appendChild(resultsDiv);
+    }
+  }
+  function searchZip() {
+    var zip = input ? input.value.trim() : '';
+    if (!zip || zip.length < 5) return;
+    resultsDiv.innerHTML = '<div style="text-align:center;padding:24px;font-family:Inter,sans-serif;color:#92400e">&#128062; Finding pet services near ' + zip + '...</div>';
+    fetch('/.netlify/functions/places-search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ zip: zip, type: 'veterinarian OR pet store OR groomer OR pet boarding' })
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.error) {
+          resultsDiv.innerHTML = '<p style="text-align:center;color:#ef4444;font-family:Inter,sans-serif">Could not find results for that ZIP code. Please try again.</p>';
+          return;
+        }
+        var html = '<div style="margin-bottom:16px"><h2 style="font-family:Inter,sans-serif;font-weight:800;font-size:1.4rem;color:#1a1a1a;text-align:center">Pet Services Near ' + data.city + '</h2><p style="text-align:center;font-family:Inter,sans-serif;color:#6b7280;font-size:0.9rem">Showing top results within 5 miles</p></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">';
+        if (!data.results || data.results.length === 0) {
+          html += '<p style="text-align:center;grid-column:1/-1;font-family:Inter,sans-serif;color:#6b7280">No pet services found nearby. Try a different ZIP.</p>';
+        } else {
+          data.results.forEach(function(place) {
+            var stars = '';
+            if (place.rating) {
+              var full = Math.floor(place.rating);
+              for (var i = 0; i < full; i++) { stars += '&#9733;'; }
+            }
+            html += '<a href="' + place.maps_url + '" target="_blank" rel="noopener" style="display:block;background:white;border:1.5px solid #fde68a;border-radius:12px;padding:16px;text-decoration:none;transition:box-shadow 0.2s" onmouseover="this.style.boxShadow=\'0 4px 16px rgba(0,0,0,0.1)\'" onmouseout="this.style.boxShadow=\'none\'">' +
+              '<h3 style="font-family:Inter,sans-serif;font-weight:700;font-size:0.95rem;color:#1a1a1a;margin:0 0 6px">' + place.name + '</h3>' +
+              '<p style="font-family:Inter,sans-serif;font-size:0.82rem;color:#6b7280;margin:0 0 6px">&#128205; ' + place.address + '</p>' +
+              (place.rating ? '<p style="font-family:Inter,sans-serif;font-size:0.82rem;color:#f59e0b;margin:0 0 6px">' + stars + ' ' + place.rating + ' (' + place.total_ratings + ' reviews)</p>' : '') +
+              (place.open_now !== undefined ? '<p style="font-family:Inter,sans-serif;font-size:0.78rem;font-weight:600;color:' + (place.open_now ? '#10b981' : '#ef4444') + ';margin:0">' + (place.open_now ? '&#9679; Open now' : '&#9679; Closed') + '</p>' : '') +
+              '</a>';
+          });
+        }
+        html += '</div>';
+        resultsDiv.innerHTML = html;
+        resultsDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      })
+      .catch(function(err) {
+        resultsDiv.innerHTML = '<p style="text-align:center;color:#ef4444;font-family:Inter,sans-serif">Something went wrong. Please try again.</p>';
+      });
+  }
+  if (btn) { btn.addEventListener('click', searchZip); }
+  if (input) {
+    input.addEventListener('keypress', function(e) { if (e.key === 'Enter') { searchZip(); } });
+  }
+})();
+</script>
 </body>
 </html>
