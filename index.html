@@ -476,29 +476,6 @@
 }
 </script>
 
-<script>
-window.searchByZip = function(){
-  var inp = document.getElementById('zip-search');
-  if(!inp){return;}
-  var q = (inp.value||'').trim();
-  if(!/^\d{5}$/.test(q)){
-    inp.focus();
-    inp.style.borderColor = 'var(--coral)';
-    return;
-  }
-  var pre = q.substring(0,3);
-  var ZIP_MAP = {
-    '606':'/cities/chicago/','770':'/cities/houston/','771':'/cities/houston/','772':'/cities/houston/','773':'/cities/houston/','774':'/cities/houston/',
-    '850':'/cities/phoenix/','851':'/cities/phoenix/','852':'/cities/phoenix/','853':'/cities/phoenix/'
-  };
-  if(ZIP_MAP[pre]){window.location.href = ZIP_MAP[pre];return;}
-  window.location.href = '/#insurance';
-};
-document.addEventListener('DOMContentLoaded', function(){
-  var z = document.getElementById('zip-search');
-  if(z){z.addEventListener('keydown', function(e){if(e.key==='Enter'){e.preventDefault();window.searchByZip();}});}
-});
-</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVNBXJBZZ3"></script>
@@ -520,7 +497,8 @@ document.addEventListener('DOMContentLoaded', function(){
     resultsDiv.id = 'zip-search-results';
     resultsDiv.style.cssText = 'max-width:800px;margin:24px auto;padding:0 24px';
     if (input) {
-      input.closest('section') || input.parentNode.parentNode.appendChild(resultsDiv);
+      var anchor = input.closest('section') || input.parentNode.parentNode;
+      anchor.appendChild(resultsDiv);
     }
   }
   function searchZip() {
