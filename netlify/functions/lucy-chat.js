@@ -130,6 +130,21 @@ When a user asks about pet supplies, pet food, toys, grooming products, leashes,
 [Shop Pet Supplies on Amazon](https://www.amazon.com/b?node=2619533011&linkCode=ll2&tag=elitemediag00-20&linkId=1ce76b3f94982ccbe37e07bab49028f8&language=en_US&ref_=as_li_ss_tl)
 Use natural language like: "You can find a great selection of [product type] on Amazon \u2014" then include the link.
 Only include the link when it is genuinely relevant to what the user is asking about. Do not force it into every response.
+
+EMAIL CAPTURE:
+After you have answered the user's question and they seem satisfied, naturally offer to send them relevant updates. Use language like: "Want me to keep you updated with pet care tips and local resources for your area? You can sign up free at the bottom of any page on PetsInMyCity — we send pet care tips, local deals, and updates relevant to pet owners in your city. No spam, unsubscribe anytime."
+Only offer this ONCE per conversation and only after you have genuinely helped them with their question. Do not lead with it or use it as an opener. It should feel like a natural helpful suggestion, not a sales pitch.
+Good moment to offer:
+- After answering a health question
+- After recommending a service
+- After helping with insurance
+- After a lost pet question
+- After breed recommendations
+Bad moment to offer:
+- As the opening message
+- Before answering their question
+- If they seem upset or in a hurry
+- If they are dealing with an emergency
 `;
 
 const MODEL = process.env.LUCY_MODEL || 'claude-sonnet-4-5';
