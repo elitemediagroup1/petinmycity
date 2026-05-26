@@ -135,9 +135,38 @@
     if(si){si.addEventListener('keydown', function(e){if(e.key==='Enter'){e.preventDefault();window.searchCity();}});}
   }
 
+    function injectEmailCapture() {
+    if (document.getElementById('pimc-email-capture')) return;
+    if (!document.getElementById('site-footer')) return;
+    var section = document.createElement('div');
+    section.id = 'pimc-email-capture';
+    section.innerHTML =
+      '<div style="background:linear-gradient(135deg,#92400e 0%,#f59e0b 100%);padding:48px 24px;text-align:center">' +
+      '<div style="max-width:560px;margin:0 auto">' +
+      '<p style="font-family:Inter,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.8);margin-bottom:8px">' +
+      '&#128062; Join Our Community' +
+      '</p>' +
+      '<h2 style="font-family:Inter,sans-serif;font-weight:800;font-size:1.6rem;color:white;margin-bottom:8px">' +
+      'Stay Connected with PetsInMyCity' +
+      '</h2>' +
+      '<p style="font-family:Inter,sans-serif;font-size:0.95rem;color:rgba(255,255,255,0.85);margin-bottom:24px;line-height:1.6">' +
+      'Join pet owners in your city who get the latest pet care tips, local resources, exclusive deals, and updates &#8212; all free, no spam.' +
+      '</p>' +
+      '<div style="background:white;border-radius:16px;padding:24px;margin-bottom:16px">' +
+      '<script src="https://js-na2.hsforms.net/forms/embed/243957727.js" defer><\/script>' +
+      '<div class="hs-form-frame" data-region="na2" data-form-id="65869a5b-9fb0-4041-8d5c-1db518fff832" data-portal-id="243957727"></div>' +
+      '</div>' +
+      '<p style="font-family:Inter,sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.7);line-height:1.6;text-align:left;margin:0">' +
+      'By providing your email address and/or phone number and checking the boxes above, you agree to receive email communications and/or text messages from PetsInMyCity.com, owned and operated by Elite Media Group LLC. Communications may include newsletters, pet care tips, local pet resources, exclusive deals, product recommendations, pet alerts, and other updates relevant to pet owners. Message frequency varies. Message and data rates may apply for text messages. You are not required to provide your phone number or agree to receive text messages as a condition of any purchase or service. You may unsubscribe from emails at any time by clicking the unsubscribe link in any email. You may opt out of text messages at any time by replying STOP. For help, reply HELP or contact us at hello@elitemediagroup.io. View our Privacy Policy at <a href="/privacy/" style="color:rgba(255,255,255,0.8)">petsinmycity.com/privacy</a>.' +
+      '</p>' +
+      '</div>' +
+      '</div>';
+    var footer = document.getElementById('site-footer');
+    footer.parentNode.insertBefore(section, footer);
+  }
   if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', mount);
-  } else { mount(); }
+    document.addEventListener('DOMContentLoaded', function(){ mount(); injectEmailCapture(); });
+  } else { mount(); injectEmailCapture(); }
 })();
 
 window.toggleMobileNav = function toggleMobileNav() {
