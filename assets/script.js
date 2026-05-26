@@ -15,6 +15,10 @@
         <a href="/adoption/">Adoption</a>
         <a href="/dog-care/">Dog Care</a>
         <a href="/find-a-vet/">Find a Vet</a>
+        <a href="/grooming/">Grooming</a>
+        <a href="/boarding/">Boarding</a>
+        <a href="/training/">Training</a>
+        <a href="/supplies/">Supplies</a>
         <li class="nav-dropdown" style="list-style:none;display:inline-block;margin:0;padding:0">
           <a href="/tools/" class="paw-tools-toggle" style="font-weight:600">&#128062; Paw Tools <span style="font-size:0.7rem;margin-left:2px">&#9660;</span></a>
           <ul class="nav-dropdown-menu" style="list-style:none;margin:0">
@@ -31,6 +35,7 @@
             <li><a href="/tools/" class="nav-dropdown-see-all">See all Paw Tools &#8594;</a></li>
           </ul>
         </li>
+        <a href="/partners/">Partners</a>
         <a href="/lucy/" style="color:var(--amber);font-weight:700">&#10024; Lucy AI</a>
         <a href="/#cities">Cities</a>
       </div>
@@ -46,6 +51,10 @@
     <a href="/adoption/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#128062; Adoption</a>
     <a href="/dog-care/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129436; Dog Care</a>
     <a href="/find-a-vet/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#129658; Find a Vet</a>
+    <a href="/grooming/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#x2702;&#xFE0F; Grooming</a>
+    <a href="/boarding/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#x1F3E1; Boarding</a>
+    <a href="/training/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#x1F415; Training</a>
+    <a href="/supplies/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#x1F6D2; Supplies</a>
     <div style="border-bottom:1px solid var(--border)">
       <span onclick="togglePawTools()" class="paw-tools-toggle" style="font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);padding:14px 0;display:flex;align-items:center;gap:6px;cursor:pointer">&#128062; Paw Tools <span style="font-size:0.7rem">&#9660;</span></span>
       <ul id="paw-tools-mobile" class="paw-tools-mobile" style="list-style:none;margin:0;padding:0 0 8px 16px">
@@ -62,6 +71,7 @@
         <li><a href="/tools/" style="font-family:Nunito;font-size:0.9rem;color:var(--amber);font-weight:700;text-decoration:none;padding:10px 0;display:block;border-top:1px solid #fde68a;margin-top:4px">See all Paw Tools &#8594;</a></li>
       </ul>
     </div>
+    <a href="/partners/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#x1F91D; Partners</a>
     <a href="/lucy/" style="display:block;padding:14px 0;border-bottom:1px solid var(--border);font-family:Nunito;font-weight:700;font-size:1rem;color:var(--amber);text-decoration:none">&#10024; Lucy AI</a>
     <a href="/#cities" style="display:block;padding:14px 0;font-family:Nunito;font-weight:600;font-size:1rem;color:var(--charcoal);text-decoration:none">&#127961;&#65039; Cities</a>
   </div>
